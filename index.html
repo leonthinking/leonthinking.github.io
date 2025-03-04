@@ -4,6 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leon Zhang - 个人主页</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- SEO 优化：添加 meta 标签 -->
+    <meta name="description" content="Leon Zhang - 互联网产品经理，AI 产品负责人。关注 AI、AR 等前沿科技，热衷于产品设计与创新。分享科技见解与生活感悟。">
+    <meta name="keywords" content="Leon Zhang, 产品经理, AI产品, 科技博主, 产品设计, 互联网产品">
+    <meta name="author" content="Leon Zhang">
+    
+    <!-- Open Graph tags for social media -->
+    <meta property="og:title" content="Leon Zhang - 产品经理 | 科技博主 | 摄影爱好者">
+    <meta property="og:description" content="互联网产品经理，专注 AI 产品与创新。分享科技洞察与生活感悦。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://leonthinking.github.io">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@leonthinking">
+    <meta name="twitter:title" content="Leon Zhang - 产品经理 | 科技博主">
+    <meta name="twitter:description" content="互联网产品经理，专注 AI 产品与创新。分享科技洞察与生活感悦。">
+    
+    <!-- 规范链接 -->
+    <link rel="canonical" href="https://leonthinking.github.io">
+    
     <style>
         * {
             margin: 0;
@@ -41,6 +67,7 @@
             padding-bottom: 10px;
             margin-bottom: 20px;
             margin-top: 40px;
+            scroll-margin-top: 2em;
         }
         .section h3 {
             margin-top: 30px;
@@ -87,25 +114,87 @@
             .header {
                 padding: 20px 0;
             }
+            .back-to-top {
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media print {
+            .contact {
+                page-break-inside: avoid;
+            }
+            a {
+                text-decoration: underline;
+            }
+            a[href^="http"]:after {
+                content: " (" attr(href) ")";
+            }
+        }
+        
+        /* 添加返回顶部按钮样式 */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2C7A7B;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
         }
     </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Leon Zhang",
+        "jobTitle": "Product Manager",
+        "description": "互联网产品经理，专注 AI 产品与创新",
+        "url": "https://leonthinking.github.io",
+        "sameAs": [
+            "https://twitter.com/leonthinking",
+            "https://jike.city/leonzhang"
+        ],
+        "knowsAbout": [
+            "Product Management",
+            "AI Products",
+            "Smart Hardware",
+            "User Experience Design"
+        ]
+    }
+    </script>
 </head>
 <body>
-    <div class="header">
+    <header class="header">
         <h1>Leon Zhang</h1>
         <p>Product Manager | Blogger | Photography Lover</p>
-    </div>
+    </header>
 
-    <div class="content">
-        <div class="section">
+    <main class="content">
+        <article class="section">
             <h2>😃 关于我</h2>
             <p>👋 Hi! 我是 Leon，这是一份帮助你快速了解我的说明书。</p>
             <p>我是一名扎根江南的北方人，现任互联网产品经理。曾在智能硬件创业公司负责移动端业务，对 AI、AR 等前沿科技和数码产品充满热情。现在杭州一家小公司做 AI 产品负责人，主要负责公司的 AI 方向。</p>
             <p>性格上是典型的 INTJ：安静中带着活力，熟悉后也会变成话痨。朋友们说我细心、思维活跃，我也很享受交朋友的过程。</p>
             <p>公众号「<strong>Stay Thinking</strong>」是我的树洞，记录着我对 AI 与科技、工作生活的思考与热爱。欢迎你不忙的时候来看看，让我们一起"Think Big, Think Different"。</p>
-        </div>
+        </article>
 
-        <div class="section">
+        <article class="section">
             <h2>🏷️ 职业画像</h2>
             <p><strong>行业领域：</strong></p>
             <div class="tags">
@@ -123,12 +212,12 @@
             </ul>
             <br>
             <p><strong>兴趣爱好：</strong>工具控｜科技爱好者｜Smartisan & Apple 产品爱好者</p>
-        </div>
+        </article>
 
-        <div class="section">
+        <article class="section">
             <h2>💻 个人作品</h2>
             <ul>
-                <li>1. Chrome 插件 <a href="https://chromewebstore.google.com/detail/dbfjffbkhlaeihdeibejjofoidomdfdp?utm_source=item-share-cp">flomo Quick Capture</a>：快速将网页内容按照结构化格式发送到flomo</li>
+                <li>1. Chrome 插件 <a href="https://chromewebstore.google.com/detail/dbfjffbkhlaeihdeibejjofoidomdfdp?utm_source=item-share-cp">flomo Quick Capture</a>：快速将网页内容按照结构化格式发送到 flomo</li>
                 <li>2. <a href="https://leonzhang.feishu.cn/wiki/OtHNwmgRbiYgoOksd0gcpgaCnNc">Leon's User Manual 2（对外） - 飞书云文档</a>
                     <ul>
                     <br>
@@ -138,9 +227,9 @@
                     </ul>
                 </li>
             </ul>
-        </div>
+        </article>
 
-        <div class="section">
+        <article class="section">
             <h2>☁️ 生活剪影</h2>
             <h3>个人爱好</h3>
             <ul>
@@ -169,21 +258,49 @@
                 <li>• 《倦怠社会》- 穿透时代精神症候的手术刀</li>
                 <li>• 《笔记的方法》- 数字时代的第二大脑构建指南</li>
             </ul>
-        </div>
+        </article>
+    </main>
 
-        <div class="contact">
-            <h2>🤝 联系我</h2>
-            <ul>
-                <li>• 社交平台：<a href="https://jike.city/leonzhang">即刻</a>｜<a href="https://twitter.com/leonthinking">Twitter</a></li>
-                <li>• WeChat：thinkinghunt</li>
-                <li>• Email：thinkinghunt@163.com</li>
-                <li>• 数字主页：<a href="https://bento.me/leonzhang">https://bento.me/leonzhang</a></li>
-            </ul>
-            <br>
-            <p>欢迎约咖啡、运动、聊天，或者单纯分享生活的喜悦～</p>
-            <br>
-            <p>最后，愿我们都能在追逐梦想的路上，遇见更好的自己。🌟</p>
-        </div>
-    </div>
+    <footer class="contact">
+        <h2>🤝 联系我</h2>
+        <ul>
+            <li>• 社交平台：<a href="https://jike.city/leonzhang">即刻</a>｜<a href="https://twitter.com/leonthinking">Twitter</a></li>
+            <li>• WeChat：thinkinghunt</li>
+            <li>• Email：thinkinghunt@163.com</li>
+            <li>• 数字主页：<a href="https://bento.me/leonzhang">https://bento.me/leonzhang</a></li>
+        </ul>
+        <br>
+        <p>欢迎约咖啡、运动、聊天，或者单纯分享生活的喜悦～</p>
+        <br>
+        <p>最后，愿我们都能在追逐梦想的路上，遇见更好的自己。🌟</p>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <a href="#" class="back-to-top" aria-label="返回页面顶部" role="button" style="display: none;">↑</a>
+    
+    <script>
+        // 返回顶部按钮逻辑
+        const backToTop = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'flex';
+                setTimeout(() => backToTop.classList.add('visible'), 10);
+            } else {
+                backToTop.classList.remove('visible');
+                setTimeout(() => backToTop.style.display = 'none', 300);
+            }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
