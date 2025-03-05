@@ -52,12 +52,14 @@
             padding: 40px 0;
         }
         .header h1 {
-            font-size: 2.5em;
+            font-size: clamp(1.8em, 5vw, 2.5em);
             margin-bottom: 10px;
         }
         .header p {
             color: #666;
-            font-size: 1.2em;
+            font-size: clamp(0.9em, 3vw, 1.2em);
+            line-height: 1.5;
+            padding: 0 10px;
         }
         .content {
             padding: 20px 0;
@@ -66,6 +68,7 @@
             margin-bottom: 40px;
         }
         .section h2 {
+            font-size: clamp(1.5em, 4vw, 1.8em);
             border-bottom: 2px solid #eee;
             padding-bottom: 10px;
             margin-bottom: 20px;
@@ -73,10 +76,12 @@
             scroll-margin-top: 2em;
         }
         .section h3 {
+            font-size: clamp(1.2em, 3.5vw, 1.5em);
             margin-top: 30px;
             margin-bottom: 15px;
         }
         .section h4 {
+            font-size: clamp(1.1em, 3vw, 1.3em);
             margin-top: 25px;
             margin-bottom: 15px;
         }
@@ -87,7 +92,7 @@
             background: #f9f9f9;
             padding: 20px;
             border-radius: 8px;
-            margin-top: 40px;
+            margin-top: 10px;
         }
         ul {
             list-style-type: none;
@@ -120,6 +125,16 @@
             .back-to-top {
                 bottom: 10px;
                 right: 10px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .header {
+                padding: 20px 0;
+            }
+            .header p {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
             }
         }
         img {
@@ -191,28 +206,19 @@
     <main class="content">
         <article class="section">
             <h2>😃 关于我</h2>
-            <p>👋 Hi! 我是 Leon，这是一份帮助你快速了解我的说明书。</p>
-            <p>我是一名扎根江南的北方人，现任互联网产品经理。曾在智能硬件创业公司负责移动端业务，对 AI、AR 等前沿科技和数码产品充满热情。现在杭州一家小公司做 AI 产品负责人，主要负责公司的 AI 方向。</p>
-            <p>性格上是典型的 INTJ：安静中带着活力，熟悉后也会变成话痨。朋友们说我细心、思维活跃，我也很享受交朋友的过程。</p>
-            <p>公众号「<strong>Stay Thinking</strong>」是我的树洞，记录着我对 AI 与科技、工作生活的思考与热爱。欢迎你不忙的时候来看看，让我们一起"Think Big, Think Different"。</p>
+            <p>👋 Hi! 我是 Leon，是一名互联网产品经理，关注 AI、XR 以及智能硬件方向。现在杭州一家小公司做 AI 产品负责人，主要负责公司的 AI 产品。</p>
+            <p>性格上是典型的 INTJ：朋友们说我细心、思维活跃，我也很享受交朋友的过程。</p>
+            <p>公众号「<strong>Stay Thinking</strong>」是我的树洞，记录着我对 AI 与科技、工作生活的思考与热爱。欢迎你不忙的时候来看看，让我们一起「</strong>Think Big, Think Different</strong>」。</p>
         </article>
 
         <article class="section">
             <h2>🏷️ 职业画像</h2>
             <p><strong>行业领域：</strong></p>
             <div class="tags">
-                <span class="tag">互联网产品</span>
+                <span class="tag">互联网产品经理</span>
                 <span class="tag">AI 产品</span>
                 <span class="tag">智能硬件</span>
             </div>
-            <br>
-            <p><strong>专业技能：</strong></p>
-            <ul>
-                <li>• 产品设计</li>
-                <li>• 交互设计</li>
-                <li>• 项目管理</li>
-                <li>• 数据分析</li>
-            </ul>
             <br>
             <p><strong>兴趣爱好：</strong>工具控｜科技爱好者｜Smartisan & Apple 产品爱好者</p>
         </article>
@@ -220,15 +226,13 @@
         <article class="section">
             <h2>💻 个人作品</h2>
             <ul>
-                <li>1. Chrome 插件 <a href="https://chromewebstore.google.com/detail/dbfjffbkhlaeihdeibejjofoidomdfdp?utm_source=item-share-cp">flomo Quick Capture</a>：快速将网页内容按照结构化格式发送到 flomo</li>
-                <li>2. <a href="https://leonzhang.feishu.cn/wiki/OtHNwmgRbiYgoOksd0gcpgaCnNc">Leon's User Manual 2（对外） - 飞书云文档</a>
+                <li>1. Chrome 插件开发： <a href="https://chromewebstore.google.com/detail/dbfjffbkhlaeihdeibejjofoidomdfdp?utm_source=item-share-cp">flomo Quick Capture</a>：快速捕捉想法并将网页地址按照结构化格式发送到 flomo</li>
+                <li>2. 推荐阅读</li>
                     <ul>
-                    <br>
                         <li>2.1 <a href="https://leonzhang.feishu.cn/wiki/QrKswAhYMiPuI5khoq2c4WGEnSd">AI 和 AR 是一件事？从 Google Glass 到 Rokid Glasses</a></li>
                         <li>2.2 <a href="https://leonzhang.feishu.cn/wiki/Clt7wYBlFiwRlpkEFeqcoSJ4nXN">AR 产品的另类之路：听觉增强 + AI</a></li>
                         <li>2.3 <a href="https://leonzhang.feishu.cn/wiki/GAnpwvmiBiwbupkRHSQcDWPznbd">初识 AR 眼镜｜热爱可抵漫长岁月</a></li>
                     </ul>
-                </li>
             </ul>
         </article>
 
@@ -237,10 +241,10 @@
             <h3>个人爱好</h3>
             <ul>
                 <li>• 📸 摄影：喜欢用镜头记录生活的美好瞬间</li>
-                <li>• 🚴‍♂️ 运动：公路车骑行、篮球院队成员、羽毛球爱好者</li>
-                <li>• 🌄 探索：爬山、徒步，追寻山顶的风光，也好奇山的另一侧风景有什么</li>
-                <li>• ✍️ 写作：每日笔记 3-4 篇，月均原创 2-3 万字，2024 年新增 38 万字</li>
+                <li>• 🚴‍♂️ 运动：公路车骑行、学院篮球队成员、羽毛球爱好者</li>
                 <li>• 🍜 美食：喜欢尝试新鲜事物，遇到好味道，甚至会连续打卡一周</li>
+                <li>• 🌄 探索：爬山、徒步，追寻山顶的风光，也好奇山的另一侧风景有什么</li>
+                <li>• ✍️ 写作：每日笔记 3-4 篇，月均记录 2-3 万字，4 年累计笔记记录近 100 万字</li>
             </ul>
 
             <h3>推荐清单</h3>
@@ -255,11 +259,11 @@
 
             <h4>📚 书籍推荐</h4>
             <ul>
-                <li>• 《马斯克传》- 颠覆认知的企业家精神图谱</li>
-                <li>• 《5000 天后的世界》- 科技预言家的未来图景</li>
-                <li>• 《金钱心理学》- 财富认知的 20 堂思维体操</li>
-                <li>• 《倦怠社会》- 穿透时代精神症候的手术刀</li>
-                <li>• 《笔记的方法》- 数字时代的第二大脑构建指南</li>
+                <li>• 《马斯克传》- 颠覆认知的企业家精神图谱：沃尔特·艾萨克森两年贴身观察的传记力作，解密 SpaceX 星链计划、Neuralink 脑机接口等疯狂构想背后的第一性原理思维</li>
+                <li>• 《5000 天后的世界》- 科技预言家的未来图景​：KK 最新未来学著作，预判 AI 与元宇宙融合的"镜像世界"、生物技术的伦理挑战，以及分布式能源革命带来的文明形态重塑</li>
+                <li>• 《金钱心理学》- 财富认知的 20 堂思维体操​：摩根·豪瑟通过历史案例揭示：致富与守财的本质差异，不在于数字计算，而在于如何驯服贪婪、恐惧与自我欺骗的心理陷阱。</li>
+                <li>• 《倦怠社会》- 穿透时代精神症候的手术刀​：韩炳哲哲学经典，犀利指出"功绩社会"如何用自我剥削取代外部规训，为内卷时代的打工人提供系统性诊断与治愈方案</li>
+                <li>• 《笔记的方法》- 数字时代的第二大脑构建指南​：flomo 创始人少楠沉淀 10 年的知识管理心法，从卡片笔记到双向链接，教你打造可迭代的认知操作系统</li>
             </ul>
         </article>
     </main>
@@ -273,35 +277,58 @@
             <li>• 数字主页：<a href="https://bento.me/leonzhang">https://bento.me/leonzhang</a></li>
         </ul>
         <br>
-        <p>欢迎约咖啡、运动、聊天，或者单纯分享生活的喜悦～</p>
+        <p>欢迎一起约咖啡、运动、聊天，或者单纯分享生活的喜悦～ 🌟</p>
         <br>
-        <p>最后，愿我们都能在追逐梦想的路上，遇见更好的自己。🌟</p>
+        <p style="text-align: right; color: #666; font-size: 0.9em;">发布日期：2025-03-05</p>
+        <p style="text-align: right; color: #666; font-size: 0.9em;">Powered by AI Coding</p>
     </footer>
 
     <!-- 返回顶部按钮 -->
-    <a href="#" class="back-to-top" aria-label="返回页面顶部" role="button" style="display: none;">↑</a>
+    <a class="back-to-top" aria-label="返回页面顶部" role="button" style="display: none;">↑</a>
     
     <script>
         // 返回顶部按钮逻辑
         const backToTop = document.querySelector('.back-to-top');
+        let isVisible = false;
         
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
-                backToTop.style.display = 'flex';
-                setTimeout(() => backToTop.classList.add('visible'), 10);
+                if (!isVisible) {
+                    backToTop.style.display = 'flex';
+                    setTimeout(() => backToTop.classList.add('visible'), 10);
+                    isVisible = true;
+                }
             } else {
-                backToTop.classList.remove('visible');
-                setTimeout(() => backToTop.style.display = 'none', 300);
+                if (isVisible) {
+                    backToTop.classList.remove('visible');
+                    setTimeout(() => backToTop.style.display = 'none', 300);
+                    isVisible = false;
+                }
             }
         });
         
-        // 平滑滚动
+        // 返回顶部的点击事件
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 为所有内部链接添加平滑滚动效果
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return; // 忽略空锚点链接
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>
