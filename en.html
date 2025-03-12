@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leon Zhang - Personal Website</title>
+    
+    <!-- Google Search Console verification -->
+    <meta name="google-site-verification" content="26KTN78H6bCMUO0bvZKpPycVN7sgOke3oaarV13iSHQ" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- SEO optimization: meta tags -->
+    <meta name="description" content="Leon Zhang - Product Manager, AI Product Lead. Focusing on AI, AR, and other cutting-edge technologies. Passionate about product design and innovation. Sharing tech insights and life reflections.">
+    <meta name="keywords" content="Leon Zhang, Product Manager, AI Products, Tech Blogger, Product Design, Internet Products">
+    <meta name="author" content="Leon Zhang">
+    
+    <!-- Open Graph tags for social media -->
+    <meta property="og:title" content="Leon Zhang - Product Manager | Tech Blogger | Photography Enthusiast">
+    <meta property="og:description" content="Internet Product Manager, focusing on AI products and innovation. Sharing tech insights and life experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://leonthinking.github.io/en">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@leonthinking">
+    <meta name="twitter:title" content="Leon Zhang - Product Manager | Tech Blogger">
+    <meta name="twitter:description" content="Internet Product Manager, focusing on AI products and innovation. Sharing tech insights and life experiences.">
+    
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://leonthinking.github.io/en">
+    
+    <style>
+        /* 复用index.html中的所有样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .header h1 {
+            font-size: clamp(1.8em, 5vw, 2.5em);
+            margin-bottom: 10px;
+        }
+        .header p {
+            color: #666;
+            font-size: clamp(0.9em, 3vw, 1.2em);
+            line-height: 1.5;
+            padding: 0 10px;
+        }
+        .content {
+            padding: 20px 0;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            font-size: clamp(1.5em, 4vw, 1.8em);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+            scroll-margin-top: 2em;
+        }
+        .section h3 {
+            font-size: clamp(1.2em, 3.5vw, 1.5em);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .section h4 {
+            font-size: clamp(1.1em, 3vw, 1.3em);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        .section p, .section li {
+            margin-bottom: 15px;
+        }
+        .contact {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin: 2px;
+            font-size: 0.9em;
+        }
+        a {
+            color: #2C7A7B;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: #1A4A4B;
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+                padding-bottom: 80px;
+            }
+            .header {
+                padding: 20px 0;
+            }
+            .back-to-top {
+                bottom: 20px;
+                right: 15px;
+                width: 36px;
+                height: 36px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .header {
+                padding: 20px 0;
+            }
+            .header p {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media print {
+            .contact {
+                page-break-inside: avoid;
+            }
+            a {
+                text-decoration: underline;
+            }
+            a[href^="http"]:after {
+                content: " (" attr(href) ")";
+            }
+        }
+        
+        /* Back to top button styles */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2C7A7B;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        /* Language switcher styles */
+        .lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        .lang-option {
+            padding: 5px 10px;
+            border: 1px solid #2C7A7B;
+            border-radius: 4px;
+            color: #2C7A7B;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-option:hover {
+            background-color: #2C7A7B;
+            color: white;
+        }
+        
+        .lang-option.active {
+            background-color: #2C7A7B;
+            color: white;
+        }
+        
+        @media (max-width: 600px) {
+            .lang-switcher {
+                top: 8px;
+                right: 8px;
+                gap: 6px;
+            }
+            .lang-option {
+                padding: 3px 6px;
+                font-size: 12px;
+                border-width: 0.5px;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Leon Zhang",
+        "jobTitle": "Product Manager",
+        "description": "Internet Product Manager, focusing on AI products and innovation",
+        "url": "https://leonthinking.github.io",
+        "sameAs": [
+            "https://twitter.com/leonthinking",
+            "https://jike.city/leonzhang"
+        ],
+        "knowsAbout": [
+            "Product Management",
+            "AI Products",
+            "Smart Hardware",
+            "User Experience Design"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Language switcher -->
+    <div class="lang-switcher">
+        <a href="cn.html" class="lang-option">中文简体</a>
+        <a href="en.html" class="lang-option active">English</a>
+    </div>
+
+    <header class="header">
+        <h1>Leon Zhang</h1>
+        <p>Product Manager | Blogger | Photography Lover</p>
+    </header>
+
+    <main class="content">
+        <article class="section">
+            <h2>😃 About Me</h2>
+            <p>👋 Hi! I'm Leon, an internet product manager focusing on AI, XR, and smart hardware. Currently working as an AI Product Lead at a small company in Hangzhou, mainly responsible for the company's AI products.</p>
+            <p>Personality-wise, I'm a typical INTJ: friends say I'm detail-oriented and have an active mind. I also enjoy the process of making friends.</p>
+            <p>My WeChat public account "<strong>Stay Thinking</strong>" is my personal space where I record my thoughts and passion for AI, technology, work, and life. Welcome to check it out when you're not busy, and let's "<strong>Think Big, Think Different</strong>" together.</p>
+        </article>
+
+        <article class="section">
+            <h2>🏷️ Professional Profile</h2>
+            <p><strong>Industry Fields:</strong></p>
+            <div class="tags">
+                <span class="tag">Internet Product Manager</span>
+                <span class="tag">AI Products</span>
+                <span class="tag">Smart Hardware</span>
+            </div>
+            <br>
+            <p><strong>Interests:</strong> Tool enthusiast | Tech lover | Smartisan & Apple product fan</p>
+        </article>
+
+        <article class="section">
+            <h2>💻 Personal Works</h2>
+            <ul>
+                <li>1. Chrome Extension Development: <a href="https://chromewebstore.google.com/detail/dbfjffbkhlaeihdeibejjofoidomdfdp?utm_source=item-share-cp">flomo Quick Capture</a> - Quickly capture ideas and send webpage addresses to flomo in a structured format</li>
+                <li>2. Recommended Reading</li>
+                    <ul>
+                        <li>2.1 <a href="https://leonzhang.feishu.cn/wiki/QrKswAhYMiPuI5khoq2c4WGEnSd">Are AI and AR the Same Thing? From Google Glass to Rokid Glasses</a></li>
+                        <li>2.2 <a href="https://leonzhang.feishu.cn/wiki/Clt7wYBlFiwRlpkEFeqcoSJ4nXN">An Alternative Path for AR Products: Audio Enhancement + AI</a></li>
+                        <li>2.3 <a href="https://leonzhang.feishu.cn/wiki/GAnpwvmiBiwbupkRHSQcDWPznbd">First Experience with AR Glasses | Passion Can Overcome the Long Journey</a></li>
+                    </ul>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h2>☁️ Life Snapshots</h2>
+            <h3>Personal Hobbies</h3>
+            <ul>
+                <li>• 📸 Photography: Enjoy capturing beautiful moments of life through the lens</li>
+                <li>• 🚴‍♂️ Sports: Road cycling, college basketball team member, badminton enthusiast</li>
+                <li>• 🍜 Food: Like to try new things, and when I find something delicious, I might even visit for a whole week straight</li>
+                <li>• 🌄 Exploration: Hiking, trekking, pursuing the scenery from mountain tops, and curious about what's on the other side</li>
+                <li>• ✍️ Writing: 3-4 notes daily, averaging 20-30 thousand words monthly, accumulated nearly 1 million words over 4 years</li>
+            </ul>
+
+        </article>
+    </main>
+
+    <footer class="contact">
+        <h2>🤝 Contact Me</h2>
+        <ul>
+            <li>• Social Platforms: <a href="https://jike.city/leonzhang">Jike</a> | <a href="https://twitter.com/leonthinking">Twitter</a></li>
+            <li>• WeChat: thinkinghunt</li>
+            <li>• Email: thinkinghunt@163.com</li>
+            <li>• Digital Homepage: <a href="https://bento.me/leonzhang">https://bento.me/leonzhang</a></li>
+        </ul>
+        <br>
+        <p>Welcome to join me for coffee, sports, chat, or simply sharing the joys of life~ 🌟</p>
+        <br>
+        <p style="text-align: right; color: #666; font-size: 0.9em;">Publication Date: 2025-03-05</p>
+        <p style="text-align: right; color: #666; font-size: 0.9em;">Powered by AI Coding</p>
+    </footer>
+
+    <!-- Back to top button -->
+    <a class="back-to-top" aria-label="Back to top" role="button" style="display: none;">↑</a>
+    
+    <script>
+        // Back to top button logic
+        const backToTop = document.querySelector('.back-to-top');
+        let isVisible = false;
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                if (!isVisible) {
+                    backToTop.style.display = 'flex';
+                    setTimeout(() => backToTop.classList.add('visible'), 10);
+                    isVisible = true;
+                }
+            } else {
+                if (isVisible) {
+                    backToTop.classList.remove('visible');
+                    setTimeout(() => backToTop.style.display = 'none', 300);
+                    isVisible = false;
+                }
+            }
+        });
+        
+        // Back to top click event
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add smooth scrolling to all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return; // Ignore empty anchor links
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
