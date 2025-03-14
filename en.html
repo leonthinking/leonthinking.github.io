@@ -185,41 +185,84 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            display: flex;
-            gap: 10px;
             z-index: 1000;
         }
         
-        .lang-option {
-            padding: 5px 10px;
-            border: 1px solid #2C7A7B;
-            border-radius: 4px;
+        .lang-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            background-color: white;
+            border: 1px solid #e1e4e8;
+            border-radius: 20px;
             color: #2C7A7B;
-            text-decoration: none;
             font-size: 14px;
-            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 120px;
+            justify-content: center;
         }
         
-        .lang-option:hover {
-            background-color: #2C7A7B;
-            color: white;
+        .lang-btn .globe-icon {
+            margin-right: 5px;
+            color: #2C7A7B;
         }
         
-        .lang-option.active {
-            background-color: #2C7A7B;
-            color: white;
+        .lang-dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 40px;
+            background-color: white;
+            min-width: 160px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1;
+            padding: 8px 0;
+        }
+        
+        .lang-dropdown-content a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.2s;
+        }
+        
+        .lang-dropdown-content a:hover {
+            background-color: #f5f8fa;
+            text-decoration: none;
+        }
+        
+        .lang-dropdown-content a.active {
+            font-weight: 500;
+        }
+        
+        .checkmark {
+            color: #2C7A7B;
+            margin-left: 10px;
+        }
+        
+        .show {
+            display: block;
         }
         
         @media (max-width: 600px) {
             .lang-switcher {
-                top: 8px;
-                right: 8px;
-                gap: 6px;
+                top: 10px;
+                right: 10px;
             }
-            .lang-option {
-                padding: 3px 6px;
+            .lang-btn {
+                padding: 6px 10px;
                 font-size: 12px;
-                border-width: 0.5px;
+                width: 100px;
             }
         }
     </style>
@@ -247,8 +290,13 @@
 <body>
     <!-- Language switcher -->
     <div class="lang-switcher">
-        <a href="cn.html" class="lang-option">中文简体</a>
-        <a href="en.html" class="lang-option active">English</a>
+        <div class="lang-dropdown">
+            <button class="lang-btn"><span class="globe-icon">🌐</span> English</button>
+            <div class="lang-dropdown-content">
+                <a href="cn.html">简体中文</a>
+                <a href="en.html" class="active">English <span class="checkmark">✓</span></a>
+            </div>
+        </div>
     </div>
 
     <header class="header">
@@ -314,7 +362,6 @@
         <br>
         <p>Welcome to join me for coffee, sports, chat, or simply sharing the joys of life~ 🌟</p>
         <br>
-        <p style="text-align: right; color: #666; font-size: 0.9em;">Publication Date: 2025-03-05</p>
         <p style="text-align: right; color: #666; font-size: 0.9em;">Powered by AI Coding</p>
     </footer>
 
@@ -363,6 +410,25 @@
                     targetElement.scrollIntoView({
                         behavior: 'smooth'
                     });
+                }
+            });
+        });
+        
+        // 语言切换下拉菜单逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const langBtn = document.querySelector('.lang-btn');
+            const langDropdown = document.querySelector('.lang-dropdown-content');
+            
+            langBtn.addEventListener('click', function() {
+                langDropdown.classList.toggle('show');
+            });
+            
+            // 点击外部区域关闭下拉菜单
+            window.addEventListener('click', function(e) {
+                if (!e.target.matches('.lang-btn') && !e.target.matches('.globe-icon')) {
+                    if (langDropdown.classList.contains('show')) {
+                        langDropdown.classList.remove('show');
+                    }
                 }
             });
         });
