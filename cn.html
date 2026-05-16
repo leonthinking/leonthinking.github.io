@@ -1,267 +1,850 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leon Zhang - 个人主页</title>
-    
-    <!-- Google Search Console 验证 -->
-    <meta name="google-site-verification" content="26KTN78H6bCMUO0bvZKpPycVN7sgOke3oaarV13iSHQ" />
-    
-    <!-- Favicon -->
+
+    <meta name="google-site-verification" content="26KTN78H6bCMUO0bvZKpPycVN7sgOke3oaarV13iSHQ">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    
-    <!-- SEO 优化：添加 meta 标签 -->
-    <meta name="description" content="Leon Zhang - 互联网产品经理，AI 产品负责人。关注 AI、AR 等前沿科技，热衷于产品设计与创新。分享科技见解与生活感悟。">
-    <meta name="keywords" content="Leon Zhang, 产品经理, AI产品, 科技博主, 产品设计, 互联网产品">
+
+    <meta name="description" content="Leon Zhang - 互联网产品经理，AI 产品负责人。关注 AI、XR、智能硬件与产品创新，分享科技见解与生活感悟。">
+    <meta name="keywords" content="Leon Zhang, 产品经理, AI产品, 科技博主, 产品设计, 互联网产品, AR, XR, 智能硬件">
     <meta name="author" content="Leon Zhang">
-    
-    <!-- Open Graph tags for social media -->
-    <meta property="og:title" content="Leon Zhang - 产品经理 | 科技博主 | 摄影爱好者">
-    <meta property="og:description" content="互联网产品经理，专注 AI 产品与创新。分享科技洞察与生活感悦。">
+    <meta property="og:title" content="Leon Zhang - 产品经理 | AI 产品负责人 | 科技写作者">
+    <meta property="og:description" content="互联网产品经理，专注 AI 产品与创新。分享科技洞察、产品思考与生活切片。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://leonthinking.github.io">
-    
-    <!-- Twitter Card tags -->
+    <meta property="og:url" content="https://leonthinking.github.io/cn.html">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@leonthinking">
-    <meta name="twitter:title" content="Leon Zhang - 产品经理 | 科技博主">
-    <meta name="twitter:description" content="互联网产品经理，专注 AI 产品与创新。分享科技洞察与生活感悦。">
-    
-    <!-- 规范链接 -->
-    <link rel="canonical" href="https://leonthinking.github.io">
-    
+    <meta name="twitter:title" content="Leon Zhang - 产品经理 | 科技写作者">
+    <meta name="twitter:description" content="互联网产品经理，专注 AI 产品与创新。分享科技洞察与生活感悟。">
+    <link rel="canonical" href="https://leonthinking.github.io/cn.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://leonthinking.github.io/cn.html">
+    <link rel="alternate" hreflang="en" href="https://leonthinking.github.io/en.html">
+    <link rel="alternate" hreflang="x-default" href="https://leonthinking.github.io/cn.html">
+    <script>
+        (() => {
+            let savedTheme = "";
+            try {
+                savedTheme = localStorage.getItem("leon-theme") || "";
+            } catch {
+                savedTheme = "";
+            }
+            const prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+            document.documentElement.dataset.theme = savedTheme || (prefersLight ? "light" : "dark");
+        })();
+    </script>
+
     <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #11100d;
+            --bg-soft: #171511;
+            --panel: rgba(255, 250, 239, 0.055);
+            --panel-strong: rgba(255, 250, 239, 0.095);
+            --panel-soft: rgba(255, 250, 239, 0.045);
+            --line: rgba(255, 250, 239, 0.16);
+            --line-strong: rgba(255, 250, 239, 0.3);
+            --text: #f7f1e4;
+            --muted: #bcb1a0;
+            --soft: #877c6d;
+            --accent: #f1b96a;
+            --accent-2: #80d0c7;
+            --accent-3: #e88c7d;
+            --spot: rgba(241, 185, 106, 0.18);
+            --wash: rgba(128, 208, 199, 0.08);
+            --grid-line: rgba(255, 250, 239, 0.045);
+            --grid-line-strong: rgba(255, 250, 239, 0.06);
+            --fade-bg: rgba(17, 16, 13, 0.88);
+            --chrome-bg: rgba(17, 16, 13, 0.72);
+            --menu-bg: rgba(23, 21, 17, 0.96);
+            --button-bg: rgba(255, 250, 239, 0.08);
+            --button-hover: rgba(255, 250, 239, 0.12);
+            --hero-a: rgba(241, 185, 106, 0.16);
+            --hero-b: rgba(128, 208, 199, 0.12);
+            --board-card-bg: rgba(17, 16, 13, 0.76);
+            --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+            --radius: 8px;
+            --max: 1180px;
+        }
+
+        :root[data-theme="light"] {
+            --bg: #f6efe4;
+            --bg-soft: #fffaf1;
+            --panel: rgba(38, 32, 24, 0.045);
+            --panel-strong: rgba(38, 32, 24, 0.075);
+            --panel-soft: rgba(38, 32, 24, 0.04);
+            --line: rgba(38, 32, 24, 0.14);
+            --line-strong: rgba(38, 32, 24, 0.25);
+            --text: #201a13;
+            --muted: #675d50;
+            --soft: #948776;
+            --accent: #a76213;
+            --accent-2: #247b73;
+            --accent-3: #b65b4d;
+            --spot: rgba(212, 134, 42, 0.22);
+            --wash: rgba(36, 123, 115, 0.12);
+            --grid-line: rgba(38, 32, 24, 0.055);
+            --grid-line-strong: rgba(38, 32, 24, 0.065);
+            --fade-bg: rgba(246, 239, 228, 0.9);
+            --chrome-bg: rgba(255, 250, 241, 0.76);
+            --menu-bg: rgba(255, 250, 241, 0.97);
+            --button-bg: rgba(38, 32, 24, 0.045);
+            --button-hover: rgba(38, 32, 24, 0.075);
+            --hero-a: rgba(212, 134, 42, 0.16);
+            --hero-b: rgba(36, 123, 115, 0.1);
+            --board-card-bg: rgba(255, 250, 241, 0.82);
+            --shadow: 0 24px 70px rgba(65, 49, 28, 0.18);
+        }
+
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background:
+                radial-gradient(circle at var(--spot-x, 50%) var(--spot-y, 0%), var(--spot), transparent 22rem),
+                linear-gradient(135deg, var(--wash), transparent 26rem),
+                var(--bg);
+            color: var(--text);
+            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.65;
+            letter-spacing: 0;
         }
-        .header {
-            text-align: center;
-            padding: 40px 0;
-        }
-        .header h1 {
-            font-size: clamp(1.8em, 5vw, 2.5em);
-            margin-bottom: 10px;
-        }
-        .header p {
-            color: #666;
-            font-size: clamp(0.9em, 3vw, 1.2em);
-            line-height: 1.5;
-            padding: 0 10px;
-        }
-        .content {
-            padding: 20px 0;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        .section h2 {
-            font-size: clamp(1.5em, 4vw, 1.8em);
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            margin-top: 40px;
-            scroll-margin-top: 2em;
-        }
-        .section h3 {
-            font-size: clamp(1.2em, 3.5vw, 1.5em);
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-        .section h4 {
-            font-size: clamp(1.1em, 3vw, 1.3em);
-            margin-top: 25px;
-            margin-bottom: 15px;
-        }
-        .section p, .section li {
-            margin-bottom: 15px;
-        }
-        .contact {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 20px;
-        }
-        .tag {
-            display: inline-block;
-            background: #f0f0f0;
-            padding: 2px 8px;
-            border-radius: 4px;
-            margin: 2px;
-            font-size: 0.9em;
-        }
-        a {
-            color: #2C7A7B;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        a:hover {
-            color: #1A4A4B;
-            text-decoration: underline;
-        }
-        @media (max-width: 600px) {
-            body {
-                padding: 15px;
-                padding-bottom: 80px;
-            }
-            .header {
-                padding: 20px 0;
-            }
-            .back-to-top {
-                bottom: 20px;
-                right: 15px;
-                width: 36px;
-                height: 36px;
-            }
-        }
-        @media screen and (max-width: 480px) {
-            .header {
-                padding: 20px 0;
-            }
-            .header p {
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-            }
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        @media print {
-            .contact {
-                page-break-inside: avoid;
-            }
-            a {
-                text-decoration: underline;
-            }
-            a[href^="http"]:after {
-                content: " (" attr(href) ")";
-            }
-        }
-        
-        /* 添加返回顶部按钮样式 */
-        .back-to-top {
+
+        body::before {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #2C7A7B;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            content: "";
+            background-image:
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 44px 44px;
+            mask-image: linear-gradient(to bottom, black, transparent 78%);
+        }
+
+        body::after {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            content: "";
+            background: linear-gradient(to bottom, transparent, var(--fade-bg) 76%);
+        }
+
+        a {
+            color: inherit;
             text-decoration: none;
-            opacity: 0;
-            transition: opacity 0.3s;
-            cursor: pointer;
         }
-        
-        .back-to-top.visible {
-            opacity: 1;
+
+        button {
+            font: inherit;
         }
-        
-        /* 语言切换按钮样式 */
-        .lang-switcher {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
+
+        .page {
+            width: min(var(--max), calc(100% - 40px));
+            margin: 0 auto;
+            padding: 24px 0 56px;
         }
-        
-        .lang-dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .lang-btn {
-            display: flex;
-            align-items: center;
-            padding: 8px 12px;
-            background-color: white;
-            border: 1px solid #e1e4e8;
-            border-radius: 20px;
-            color: #2C7A7B;
-            font-size: 14px;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            width: 120px;
-            justify-content: center;
-        }
-        
-        .lang-btn .globe-icon {
-            margin-right: 5px;
-            color: #2C7A7B;
-        }
-        
-        .lang-dropdown-content {
-            display: none;
-            position: absolute;
-            right: 0;
-            top: 40px;
-            background-color: white;
-            min-width: 160px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1;
-            padding: 8px 0;
-        }
-        
-        .lang-dropdown-content a {
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px 15px;
-            text-decoration: none;
-            color: #333;
-            transition: background-color 0.2s;
+            gap: 16px;
+            min-height: 68px;
+            padding: 14px 0;
+            backdrop-filter: blur(18px);
         }
-        
-        .lang-dropdown-content a:hover {
-            background-color: #f5f8fa;
-            text-decoration: none;
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            letter-spacing: 0;
         }
-        
-        .lang-dropdown-content a.active {
-            font-weight: 500;
+
+        .brand-mark {
+            display: grid;
+            width: 34px;
+            height: 34px;
+            place-items: center;
+            border: 1px solid var(--line-strong);
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(241, 185, 106, 0.2), rgba(128, 208, 199, 0.08));
+            color: var(--accent);
+            box-shadow: var(--shadow);
         }
-        
-        .checkmark {
-            color: #2C7A7B;
-            margin-left: 10px;
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: var(--chrome-bg);
         }
-        
-        .show {
+
+        .nav a,
+        .lang-btn,
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 34px;
+            padding: 0 12px;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 13px;
+            white-space: nowrap;
+            transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .nav a:hover,
+        .nav a.is-active,
+        .lang-btn:hover,
+        .theme-toggle:hover {
+            border-color: var(--line);
+            background: var(--button-bg);
+            color: var(--text);
+        }
+
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-switcher {
+            position: relative;
+        }
+
+        .lang-btn,
+        .theme-toggle {
+            cursor: pointer;
+            background: var(--chrome-bg);
+        }
+
+        .lang-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            display: none;
+            min-width: 150px;
+            padding: 6px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--menu-bg);
+            box-shadow: var(--shadow);
+        }
+
+        .lang-menu.is-open {
             display: block;
         }
-        
-        @media (max-width: 600px) {
-            .lang-switcher {
-                top: 10px;
-                right: 10px;
+
+        .lang-menu a {
+            display: flex;
+            justify-content: space-between;
+            padding: 9px 10px;
+            border-radius: 6px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .lang-menu a:hover,
+        .lang-menu a.active {
+            background: var(--button-bg);
+            color: var(--text);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+            gap: 24px;
+            align-items: stretch;
+            min-height: calc(100vh - 130px);
+            padding: 58px 0 36px;
+        }
+
+        .hero-copy {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 0;
+            overflow-wrap: anywhere;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            width: fit-content;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 22px;
+            padding: 7px 10px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 13px;
+            background: var(--panel-soft);
+        }
+
+        .pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-2);
+            box-shadow: 0 0 0 0 rgba(128, 208, 199, 0.7);
+            animation: pulse 2.6s infinite;
+        }
+
+        @keyframes pulse {
+            70% {
+                box-shadow: 0 0 0 12px rgba(128, 208, 199, 0);
             }
-            .lang-btn {
-                padding: 6px 10px;
-                font-size: 12px;
-                width: 100px;
+            100% {
+                box-shadow: 0 0 0 0 rgba(128, 208, 199, 0);
+            }
+        }
+
+        h1 {
+            max-width: 780px;
+            margin: 0;
+            font-size: clamp(48px, 9vw, 112px);
+            line-height: 0.9;
+            letter-spacing: 0;
+        }
+
+        h1 span {
+            display: block;
+        }
+
+        .hero-copy p {
+            max-width: 660px;
+            margin: 24px 0 0;
+            color: var(--muted);
+            font-size: clamp(17px, 2vw, 22px);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 34px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0 16px;
+            border: 1px solid var(--line-strong);
+            border-radius: 8px;
+            color: var(--text);
+            background: var(--button-bg);
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .button.primary {
+            border-color: rgba(241, 185, 106, 0.5);
+            background: #f1b96a;
+            color: #21170c;
+            font-weight: 700;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            background: var(--button-hover);
+        }
+
+        .button.primary:hover {
+            background: #ffd28c;
+        }
+
+        .hero-board {
+            position: relative;
+            display: grid;
+            align-content: end;
+            min-height: 520px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background:
+                linear-gradient(160deg, var(--hero-a), transparent 42%),
+                linear-gradient(25deg, var(--hero-b), transparent 48%),
+                var(--panel-soft);
+            box-shadow: var(--shadow);
+        }
+
+        .hero-board::before {
+            position: absolute;
+            inset: 18px;
+            content: "";
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background-image:
+                linear-gradient(var(--grid-line-strong) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line-strong) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+
+        .board-card {
+            position: relative;
+            z-index: 1;
+            margin: 18px;
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--board-card-bg);
+            backdrop-filter: blur(10px);
+        }
+
+        .board-row {
+            display: grid;
+            grid-template-columns: 44px 1fr;
+            gap: 12px;
+            padding: 13px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .board-row:first-child {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+        .board-row:last-child {
+            padding-bottom: 0;
+        }
+
+        .row-index {
+            color: var(--accent);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 13px;
+        }
+
+        .row-title {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .row-note {
+            margin: 2px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .section {
+            display: grid;
+            grid-template-columns: 160px minmax(0, 1fr);
+            gap: 30px;
+            padding: 58px 0;
+            border-top: 1px solid var(--line);
+            scroll-margin-top: 92px;
+        }
+
+        .section-kicker {
+            position: sticky;
+            top: 90px;
+            align-self: start;
+            color: var(--soft);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 13px;
+        }
+
+        .section-body {
+            min-width: 0;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+
+        .section h2 {
+            margin: 0;
+            font-size: clamp(28px, 4vw, 46px);
+            line-height: 1;
+            letter-spacing: 0;
+        }
+
+        .section-intro {
+            max-width: 690px;
+            margin: 0 0 24px;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 14px;
+        }
+
+        .grid.two {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .grid.three {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .card {
+            position: relative;
+            min-width: 0;
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--panel);
+            transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--line-strong);
+            background: var(--panel-strong);
+        }
+
+        .card .meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 18px;
+            color: var(--soft);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 20px;
+            line-height: 1.25;
+        }
+
+        .card p {
+            margin: 12px 0 0;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .card-link::after {
+            position: absolute;
+            inset: 0;
+            content: "";
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            min-height: 32px;
+            padding: 0 11px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--muted);
+            background: var(--panel-soft);
+            font-size: 14px;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 10px;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 98px 1fr;
+            gap: 16px;
+            padding: 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel-soft);
+        }
+
+        .timeline-item time {
+            color: var(--accent);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 13px;
+        }
+
+        .timeline-item h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .timeline-item p {
+            margin: 7px 0 0;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .recommendations {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .list-card {
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel-soft);
+        }
+
+        .list-card h3 {
+            margin: 0 0 14px;
+            font-size: 18px;
+        }
+
+        .list-card ul {
+            display: grid;
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .list-card li {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .list-card strong {
+            color: var(--text);
+            font-weight: 650;
+        }
+
+        .contact-panel {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 22px;
+            align-items: end;
+            padding: 26px;
+            border: 1px solid var(--line-strong);
+            border-radius: 8px;
+            background:
+                linear-gradient(135deg, rgba(241, 185, 106, 0.12), transparent 52%),
+                var(--panel);
+        }
+
+        .contact-panel h2 {
+            margin: 0;
+            font-size: clamp(30px, 5vw, 54px);
+            line-height: 1;
+        }
+
+        .contact-panel p {
+            max-width: 640px;
+            margin: 14px 0 0;
+            color: var(--muted);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .copy-tip {
+            min-height: 20px;
+            margin-top: 12px;
+            color: var(--accent-2);
+            font-size: 13px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 30;
+            display: grid;
+            width: 42px;
+            height: 42px;
+            place-items: center;
+            border: 1px solid var(--line-strong);
+            border-radius: 8px;
+            background: var(--menu-bg);
+            color: var(--text);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(8px);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .back-to-top.is-visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 40;
+            width: 100%;
+            height: 2px;
+            transform-origin: left;
+            transform: scaleX(0);
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        }
+
+        @media (max-width: 900px) {
+            .topbar {
+                align-items: flex-start;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .hero,
+            .section,
+            .contact-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 38px;
+            }
+
+            .hero-board {
+                min-height: 430px;
+            }
+
+            .section-kicker {
+                position: static;
+            }
+
+            .grid.three,
+            .grid.two,
+            .recommendations {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .page {
+                width: min(calc(100% - 28px), var(--max));
+                padding-top: 14px;
+            }
+
+            .brand span:last-child {
+                display: none;
+            }
+
+            .topbar {
+                min-height: 58px;
+            }
+
+            .hero {
+                padding-top: 26px;
+            }
+
+            h1 {
+                font-size: clamp(38px, 11vw, 42px);
+            }
+
+            .hero-copy p {
+                font-size: 16px;
+            }
+
+            .hero-board {
+                min-height: 360px;
+            }
+
+            .board-card {
+                margin: 12px;
+                padding: 14px;
+            }
+
+            .section {
+                padding: 42px 0;
+            }
+
+            .section-head {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 6px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+            }
+
+            .topbar,
+            .back-to-top,
+            .progress {
+                display: none;
+            }
+
+            .page {
+                width: 100%;
+                padding: 0;
+            }
+
+            .card,
+            .timeline-item,
+            .list-card,
+            .contact-panel {
+                break-inside: avoid;
+                border-color: #ddd;
+                background: #fff;
+            }
+
+            a[href^="http"]::after {
+                content: " (" attr(href) ")";
             }
         }
     </style>
@@ -275,177 +858,329 @@
         "url": "https://leonthinking.github.io",
         "sameAs": [
             "https://twitter.com/leonthinking",
-            "https://jike.city/leonzhang"
+            "https://jike.city/leonzhang",
+            "https://bento.me/leonzhang"
         ],
         "knowsAbout": [
             "Product Management",
             "AI Products",
             "Smart Hardware",
-            "User Experience Design"
+            "User Experience Design",
+            "XR"
         ]
     }
     </script>
 </head>
 <body>
-    <!-- 添加语言切换按钮 -->
-    <div class="lang-switcher">
-        <div class="lang-dropdown">
-            <button class="lang-btn"><span class="globe-icon">🌐</span> 简体中文</button>
-            <div class="lang-dropdown-content">
-                <a href="cn.html" class="active">简体中文 <span class="checkmark">✓</span></a>
-                <a href="en.html">English</a>
+    <div class="progress" aria-hidden="true"></div>
+
+    <div class="page">
+        <header class="topbar">
+            <a class="brand" href="#top" aria-label="返回首页顶部">
+                <span class="brand-mark">L</span>
+                <span>Leon Zhang</span>
+            </a>
+
+            <nav class="nav" aria-label="页面导航">
+                <a href="#about">关于</a>
+                <a href="#work">作品</a>
+                <a href="#life">生活</a>
+                <a href="#contact">联系</a>
+            </nav>
+
+            <div class="top-actions">
+                <button class="theme-toggle" type="button" aria-label="切换浅色或深色模式">
+                    <span class="theme-icon" aria-hidden="true">☼</span>
+                    <span class="theme-label">Light</span>
+                </button>
+                <div class="lang-switcher">
+                    <button class="lang-btn" type="button" aria-expanded="false" aria-controls="lang-menu">简体中文</button>
+                    <div class="lang-menu" id="lang-menu">
+                        <a class="active" href="cn.html">简体中文 <span>✓</span></a>
+                        <a href="en.html">English</a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </header>
+
+        <main id="top">
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-copy">
+                    <div class="eyebrow"><span class="pulse"></span> AI 产品负责人 / 产品经理 / 写作者</div>
+                    <h1 id="hero-title"><span>Think Big,</span><span>Think Different.</span></h1>
+                    <p>我是 Leon，关注 AI、XR 与智能硬件。现在杭州一家小公司负责 AI 产品，也持续用写作、摄影和日常观察整理自己对科技与生活的理解。</p>
+                    <div class="hero-actions">
+                        <a class="button primary" href="#work">查看作品</a>
+                        <a class="button" href="https://bento.me/leonzhang">数字主页</a>
+                        <a class="button" href="#contact">联系我</a>
+                    </div>
+                </div>
+
+                <aside class="hero-board" aria-label="Leon 的个人信息摘要">
+                    <div class="board-card">
+                        <div class="board-row">
+                            <span class="row-index">01</span>
+                            <div>
+                                <p class="row-title">AI Product Lead</p>
+                                <p class="row-note">负责 AI 产品，从机会判断到落地体验。</p>
+                            </div>
+                        </div>
+                        <div class="board-row">
+                            <span class="row-index">02</span>
+                            <div>
+                                <p class="row-title">Stay Thinking</p>
+                                <p class="row-note">公众号树洞，记录科技、工作与生活思考。</p>
+                            </div>
+                        </div>
+                        <div class="board-row">
+                            <span class="row-index">03</span>
+                            <div>
+                                <p class="row-title">Daily Notes</p>
+                                <p class="row-note">每日 3-4 篇笔记，4 年近 100 万字记录。</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+
+            <section class="section" id="about" aria-labelledby="about-title">
+                <div class="section-kicker">01 / PROFILE</div>
+                <div class="section-body">
+                    <div class="section-head">
+                        <h2 id="about-title">关于我</h2>
+                    </div>
+                    <p class="section-intro">典型 INTJ，细心、思维活跃，也享受认识新朋友的过程。对我来说，产品是把复杂世界重新组织成可被使用、可被感知、可被持续迭代的系统。</p>
+                    <div class="grid three">
+                        <div class="card">
+                            <div class="meta"><span>Domain</span><span>01</span></div>
+                            <h3>AI 与 XR</h3>
+                            <p>关注 AI 产品、AR 眼镜、听觉增强与智能硬件，希望把前沿技术变成自然可用的体验。</p>
+                        </div>
+                        <div class="card">
+                            <div class="meta"><span>Work</span><span>02</span></div>
+                            <h3>产品负责人</h3>
+                            <p>在杭州负责 AI 产品，日常处理需求判断、体验设计、业务推进和跨团队协作。</p>
+                        </div>
+                        <div class="card">
+                            <div class="meta"><span>Habit</span><span>03</span></div>
+                            <h3>持续记录</h3>
+                            <p>用笔记、公众号和摄影保存观察，把零散经验沉淀成可复用的判断。</p>
+                        </div>
+                    </div>
+                    <div class="tags" aria-label="职业画像标签" style="margin-top: 18px;">
+                        <span class="tag">互联网产品经理</span>
+                        <span class="tag">AI 产品</span>
+                        <span class="tag">智能硬件</span>
+                        <span class="tag">工具控</span>
+                        <span class="tag">科技爱好者</span>
+                        <span class="tag">Smartisan & Apple 产品爱好者</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="work" aria-labelledby="work-title">
+                <div class="section-kicker">02 / WORKS</div>
+                <div class="section-body">
+                    <div class="section-head">
+                        <h2 id="work-title">个人作品</h2>
+                    </div>
+                    <p class="section-intro">把作品和文章放成一张可扫描的索引：有工具、有产品观察，也有我对 AI 与 AR 关系的阶段性判断。</p>
+                    <div class="grid two">
+                        <article class="card">
+                            <div class="meta"><span>Chrome Extension</span><span>Tool</span></div>
+                            <h3><a class="card-link" href="https://chromewebstore.google.com/detail/dbfjffbkhlaeihdeibejjofoidomdfdp?utm_source=item-share-cp">flomo Quick Capture</a></h3>
+                            <p>快速捕捉想法，并将网页地址按结构化格式发送到 flomo。</p>
+                        </article>
+                        <article class="card">
+                            <div class="meta"><span>Writing</span><span>AR / AI</span></div>
+                            <h3><a class="card-link" href="https://leonzhang.feishu.cn/wiki/QrKswAhYMiPuI5khoq2c4WGEnSd">AI 和 AR 是一件事？</a></h3>
+                            <p>从 Google Glass 到 Rokid Glasses，重新理解 AI 与 AR 的产品关系。</p>
+                        </article>
+                        <article class="card">
+                            <div class="meta"><span>Writing</span><span>Audio</span></div>
+                            <h3><a class="card-link" href="https://leonzhang.feishu.cn/wiki/Clt7wYBlFiwRlpkEFeqcoSJ4nXN">AR 产品的另类之路</a></h3>
+                            <p>听觉增强 + AI 可能是一条更自然、更高频的智能穿戴路径。</p>
+                        </article>
+                        <article class="card">
+                            <div class="meta"><span>Writing</span><span>Experience</span></div>
+                            <h3><a class="card-link" href="https://leonzhang.feishu.cn/wiki/GAnpwvmiBiwbupkRHSQcDWPznbd">初识 AR 眼镜</a></h3>
+                            <p>从真实体验出发，记录热爱如何抵达漫长岁月。</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="life" aria-labelledby="life-title">
+                <div class="section-kicker">03 / LIFE</div>
+                <div class="section-body">
+                    <div class="section-head">
+                        <h2 id="life-title">生活剪影</h2>
+                    </div>
+                    <div class="timeline" aria-label="个人爱好">
+                        <div class="timeline-item">
+                            <time>Photo</time>
+                            <div>
+                                <h3>摄影</h3>
+                                <p>喜欢用镜头记录生活里的好光线、好瞬间和那些不太会重复出现的场景。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <time>Sport</time>
+                            <div>
+                                <h3>运动</h3>
+                                <p>公路车骑行、学院篮球队成员、羽毛球爱好者。身体先动起来，很多问题会变简单。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <time>Explore</time>
+                            <div>
+                                <h3>探索</h3>
+                                <p>爬山、徒步、尝试新鲜食物。遇到好味道，甚至会连续打卡一周。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <time>Write</time>
+                            <div>
+                                <h3>写作</h3>
+                                <p>每日笔记 3-4 篇，月均记录 2-3 万字，用长期记录对抗记忆的自然损耗。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommendations" style="margin-top: 14px;">
+                        <div class="list-card">
+                            <h3>播客精选</h3>
+                            <ul>
+                                <li><strong>三五环</strong>：独立商业观察者视角，聚焦科技与商业交叉领域。</li>
+                                <li><strong>半拿铁</strong>：相声式商业史剧场，用轻松方式讲企业兴衰。</li>
+                                <li><strong>组织进化论</strong>：数字化时代的职场与组织观察。</li>
+                                <li><strong>商业就是这样</strong>：15 分钟高密度商业通识课。</li>
+                                <li><strong>故事 FM</strong>：声音版人间世相簿。</li>
+                            </ul>
+                        </div>
+                        <div class="list-card">
+                            <h3>书籍推荐</h3>
+                            <ul>
+                                <li><strong>马斯克传</strong>：第一性原理与企业家精神的复杂样本。</li>
+                                <li><strong>5000 天后的世界</strong>：KK 对 AI、元宇宙与未来文明的观察。</li>
+                                <li><strong>金钱心理学</strong>：财富认知背后的心理与行为模式。</li>
+                                <li><strong>倦怠社会</strong>：对功绩社会和自我剥削的系统诊断。</li>
+                                <li><strong>笔记的方法</strong>：数字时代第二大脑的构建指南。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="contact" aria-labelledby="contact-title">
+                <div class="section-kicker">04 / CONTACT</div>
+                <div class="section-body">
+                    <div class="contact-panel">
+                        <div>
+                            <h2 id="contact-title">一起约咖啡、运动，或者聊聊产品。</h2>
+                            <p>欢迎分享生活里的喜悦，也欢迎交流 AI、XR、智能硬件、产品设计和知识管理。</p>
+                            <div class="copy-tip" role="status" aria-live="polite"></div>
+                        </div>
+                        <div class="contact-links">
+                            <a class="button" href="https://jike.city/leonzhang">即刻</a>
+                            <a class="button" href="https://twitter.com/leonthinking">Twitter</a>
+                            <button class="button" type="button" data-copy="thinkinghunt">复制微信</button>
+                            <button class="button" type="button" data-copy="thinkinghunt@163.com">复制邮箱</button>
+                            <a class="button primary" href="https://bento.me/leonzhang">Bento</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <header class="header">
-        <h1>Leon Zhang</h1>
-        <p>Product Manager | Blogger | Photography Lover</p>
-    </header>
+    <a class="back-to-top" href="#top" aria-label="返回页面顶部">↑</a>
 
-    <main class="content">
-        <article class="section">
-            <h2>😃 关于我</h2>
-            <p>👋 Hi! 我是 Leon，是一名互联网产品经理，关注 AI、XR 以及智能硬件方向。现在杭州一家小公司做 AI 产品负责人，主要负责公司的 AI 产品。</p>
-            <p>性格上是典型的 INTJ：朋友们说我细心、思维活跃，我也很享受交朋友的过程。</p>
-            <p>公众号「<strong>Stay Thinking</strong>」是我的树洞，记录着我对 AI 与科技、工作生活的思考与热爱。欢迎你不忙的时候来看看，让我们一起「</strong>Think Big, Think Different</strong>」。</p>
-        </article>
-
-        <article class="section">
-            <h2>🏷️ 职业画像</h2>
-            <p><strong>行业领域：</strong></p>
-            <div class="tags">
-                <span class="tag">互联网产品经理</span>
-                <span class="tag">AI 产品</span>
-                <span class="tag">智能硬件</span>
-            </div>
-            <br>
-            <p><strong>兴趣爱好：</strong>工具控｜科技爱好者｜Smartisan & Apple 产品爱好者</p>
-        </article>
-
-        <article class="section">
-            <h2>💻 个人作品</h2>
-            <ul>
-                <li>1. Chrome 插件开发： <a href="https://chromewebstore.google.com/detail/dbfjffbkhlaeihdeibejjofoidomdfdp?utm_source=item-share-cp">flomo Quick Capture</a>：快速捕捉想法并将网页地址按照结构化格式发送到 flomo</li>
-                <li>2. 推荐阅读</li>
-                    <ul>
-                        <li>2.1 <a href="https://leonzhang.feishu.cn/wiki/QrKswAhYMiPuI5khoq2c4WGEnSd">AI 和 AR 是一件事？从 Google Glass 到 Rokid Glasses</a></li>
-                        <li>2.2 <a href="https://leonzhang.feishu.cn/wiki/Clt7wYBlFiwRlpkEFeqcoSJ4nXN">AR 产品的另类之路：听觉增强 + AI</a></li>
-                        <li>2.3 <a href="https://leonzhang.feishu.cn/wiki/GAnpwvmiBiwbupkRHSQcDWPznbd">初识 AR 眼镜｜热爱可抵漫长岁月</a></li>
-                    </ul>
-            </ul>
-        </article>
-
-        <article class="section">
-            <h2>☁️ 生活剪影</h2>
-            <h3>个人爱好</h3>
-            <ul>
-                <li>• 📸 摄影：喜欢用镜头记录生活的美好瞬间</li>
-                <li>• 🚴‍♂️ 运动：公路车骑行、学院篮球队成员、羽毛球爱好者</li>
-                <li>• 🍜 美食：喜欢尝试新鲜事物，遇到好味道，甚至会连续打卡一周</li>
-                <li>• 🌄 探索：爬山、徒步，追寻山顶的风光，也好奇山的另一侧风景有什么</li>
-                <li>• ✍️ 写作：每日笔记 3-4 篇，月均记录 2-3 万字，4 年累计笔记记录近 100 万字</li>
-            </ul>
-
-            <h3>推荐清单</h3>
-            <h4>🎧 播客精选</h4>
-            <ul>
-                <li>• 《三五环》- 独立商业观察者视角：刘飞主理的深度商业播客，聚焦科技与商业交叉领域</li>
-                <li>• 《半拿铁》- 相声式商业史剧场：全网首创"评书体"商业叙事，用单口相声演绎企业兴衰</li>
-                <li>• 《组织进化论》- 数字化时代的职场生存手册：由飞书团队打造的管理类播客 TOP3 节目</li>
-                <li>• 《商业就是这样》- 15 分钟商业通识课：第一财经出品的高密度知识节目</li>
-                <li>• 《故事 FM》- 声音版人间世相簿：荣获苹果年度播客的国民级纪实节目</li>
-            </ul>
-
-            <h4>📚 书籍推荐</h4>
-            <ul>
-                <li>• 《马斯克传》- 颠覆认知的企业家精神图谱：沃尔特·艾萨克森两年贴身观察的传记力作，解密 SpaceX 星链计划、Neuralink 脑机接口等疯狂构想背后的第一性原理思维</li>
-                <li>• 《5000 天后的世界》- 科技预言家的未来图景​：KK 最新未来学著作，预判 AI 与元宇宙融合的"镜像世界"、生物技术的伦理挑战，以及分布式能源革命带来的文明形态重塑</li>
-                <li>• 《金钱心理学》- 财富认知的 20 堂思维体操​：摩根·豪瑟通过历史案例揭示：致富与守财的本质差异，不在于数字计算，而在于如何驯服贪婪、恐惧与自我欺骗的心理陷阱。</li>
-                <li>• 《倦怠社会》- 穿透时代精神症候的手术刀​：韩炳哲哲学经典，犀利指出"功绩社会"如何用自我剥削取代外部规训，为内卷时代的打工人提供系统性诊断与治愈方案</li>
-                <li>• 《笔记的方法》- 数字时代的第二大脑构建指南​：flomo 创始人少楠沉淀 10 年的知识管理心法，从卡片笔记到双向链接，教你打造可迭代的认知操作系统</li>
-            </ul>
-        </article>
-    </main>
-
-    <footer class="contact">
-        <h2>🤝 联系我</h2>
-        <ul>
-            <li>• 社交平台：<a href="https://jike.city/leonzhang">即刻</a>｜<a href="https://twitter.com/leonthinking">Twitter</a></li>
-            <li>• WeChat：thinkinghunt</li>
-            <li>• Email：thinkinghunt@163.com</li>
-            <li>• 数字主页：<a href="https://bento.me/leonzhang">https://bento.me/leonzhang</a></li>
-        </ul>
-        <br>
-        <p>欢迎一起约咖啡、运动、聊天，或者单纯分享生活的喜悦～ 🌟</p>
-        <br>
-        <p style="text-align: right; color: #666; font-size: 0.9em;">Powered by AI Coding</p>
-    </footer>
-
-    <!-- 返回顶部按钮 -->
-    <a class="back-to-top" aria-label="返回页面顶部" role="button" style="display: none;">↑</a>
-    
     <script>
-        // 返回顶部按钮逻辑
-        const backToTop = document.querySelector('.back-to-top');
-        let isVisible = false;
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                if (!isVisible) {
-                    backToTop.style.display = 'flex';
-                    setTimeout(() => backToTop.classList.add('visible'), 10);
-                    isVisible = true;
+        const root = document.documentElement;
+        const progress = document.querySelector(".progress");
+        const backToTop = document.querySelector(".back-to-top");
+        const navLinks = [...document.querySelectorAll(".nav a")];
+        const sections = navLinks.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+        const langButton = document.querySelector(".lang-btn");
+        const langMenu = document.querySelector(".lang-menu");
+        const themeButton = document.querySelector(".theme-toggle");
+        const themeIcon = document.querySelector(".theme-icon");
+        const themeLabel = document.querySelector(".theme-label");
+        const copyTip = document.querySelector(".copy-tip");
+
+        function saveTheme(theme) {
+            try {
+                localStorage.setItem("leon-theme", theme);
+            } catch {
+                // Some file:// or privacy-mode contexts block storage; the toggle should still work.
+            }
+        }
+
+        function applyTheme(theme, shouldSave = true) {
+            root.dataset.theme = theme;
+            if (shouldSave) {
+                saveTheme(theme);
+            }
+            const nextTheme = theme === "light" ? "dark" : "light";
+            themeIcon.textContent = nextTheme === "light" ? "☼" : "☾";
+            themeLabel.textContent = nextTheme === "light" ? "Light" : "Dark";
+            themeButton.setAttribute("aria-label", nextTheme === "light" ? "切换到浅色模式" : "切换到深色模式");
+        }
+
+        applyTheme(root.dataset.theme || "dark", false);
+
+        window.addEventListener("pointermove", (event) => {
+            root.style.setProperty("--spot-x", `${event.clientX}px`);
+            root.style.setProperty("--spot-y", `${event.clientY}px`);
+        });
+
+        function updateScrollState() {
+            const scrollTop = window.scrollY;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.transform = `scaleX(${maxScroll > 0 ? scrollTop / maxScroll : 0})`;
+            backToTop.classList.toggle("is-visible", scrollTop > 420);
+
+            let current = sections[0]?.id;
+            sections.forEach((section) => {
+                if (section.getBoundingClientRect().top <= 130) {
+                    current = section.id;
                 }
-            } else {
-                if (isVisible) {
-                    backToTop.classList.remove('visible');
-                    setTimeout(() => backToTop.style.display = 'none', 300);
-                    isVisible = false;
-                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.toggle("is-active", link.getAttribute("href") === `#${current}`);
+            });
+        }
+
+        window.addEventListener("scroll", updateScrollState, { passive: true });
+        window.addEventListener("resize", updateScrollState);
+        updateScrollState();
+
+        langButton.addEventListener("click", () => {
+            const isOpen = langMenu.classList.toggle("is-open");
+            langButton.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!event.target.closest(".lang-switcher")) {
+                langMenu.classList.remove("is-open");
+                langButton.setAttribute("aria-expanded", "false");
             }
         });
-        
-        // 返回顶部的点击事件
-        backToTop.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+
+        themeButton.addEventListener("click", () => {
+            applyTheme(root.dataset.theme === "light" ? "dark" : "light");
         });
 
-        // 为所有内部链接添加平滑滚动效果
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return; // 忽略空锚点链接
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // 语言切换下拉菜单逻辑
-        document.addEventListener('DOMContentLoaded', function() {
-            const langBtn = document.querySelector('.lang-btn');
-            const langDropdown = document.querySelector('.lang-dropdown-content');
-            
-            langBtn.addEventListener('click', function() {
-                langDropdown.classList.toggle('show');
-            });
-            
-            // 点击外部区域关闭下拉菜单
-            window.addEventListener('click', function(e) {
-                if (!e.target.matches('.lang-btn') && !e.target.matches('.globe-icon')) {
-                    if (langDropdown.classList.contains('show')) {
-                        langDropdown.classList.remove('show');
-                    }
+        document.querySelectorAll("[data-copy]").forEach((button) => {
+            button.addEventListener("click", async () => {
+                const value = button.dataset.copy;
+                try {
+                    await navigator.clipboard.writeText(value);
+                    copyTip.textContent = `已复制：${value}`;
+                } catch {
+                    copyTip.textContent = value;
                 }
             });
         });

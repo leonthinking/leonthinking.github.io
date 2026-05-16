@@ -4,265 +4,847 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leon Zhang - Personal Website</title>
-    
-    <!-- Google Search Console verification -->
-    <meta name="google-site-verification" content="26KTN78H6bCMUO0bvZKpPycVN7sgOke3oaarV13iSHQ" />
-    
-    <!-- Favicon -->
+
+    <meta name="google-site-verification" content="26KTN78H6bCMUO0bvZKpPycVN7sgOke3oaarV13iSHQ">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    
-    <!-- SEO optimization: meta tags -->
-    <meta name="description" content="Leon Zhang - Product Manager, AI Product Lead. Focusing on AI, AR, and other cutting-edge technologies. Passionate about product design and innovation. Sharing tech insights and life reflections.">
-    <meta name="keywords" content="Leon Zhang, Product Manager, AI Products, Tech Blogger, Product Design, Internet Products">
+
+    <meta name="description" content="Leon Zhang - Product Manager and AI Product Lead. Focused on AI, XR, smart hardware, product design, and thoughtful writing about technology and life.">
+    <meta name="keywords" content="Leon Zhang, Product Manager, AI Products, Tech Writer, Product Design, Internet Products, AR, XR, Smart Hardware">
     <meta name="author" content="Leon Zhang">
-    
-    <!-- Open Graph tags for social media -->
-    <meta property="og:title" content="Leon Zhang - Product Manager | Tech Blogger | Photography Enthusiast">
-    <meta property="og:description" content="Internet Product Manager, focusing on AI products and innovation. Sharing tech insights and life experiences.">
+    <meta property="og:title" content="Leon Zhang - Product Manager | AI Product Lead | Tech Writer">
+    <meta property="og:description" content="Product manager focused on AI products and innovation. Sharing technology insights, product thinking, and slices of everyday life.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://leonthinking.github.io/en">
-    
-    <!-- Twitter Card tags -->
+    <meta property="og:url" content="https://leonthinking.github.io/en.html">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@leonthinking">
-    <meta name="twitter:title" content="Leon Zhang - Product Manager | Tech Blogger">
-    <meta name="twitter:description" content="Internet Product Manager, focusing on AI products and innovation. Sharing tech insights and life experiences.">
-    
-    <!-- Canonical link -->
-    <link rel="canonical" href="https://leonthinking.github.io/en">
-    
+    <meta name="twitter:title" content="Leon Zhang - Product Manager | Tech Writer">
+    <meta name="twitter:description" content="Product manager focused on AI products and innovation. Sharing technology insights and life reflections.">
+    <link rel="canonical" href="https://leonthinking.github.io/en.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://leonthinking.github.io/cn.html">
+    <link rel="alternate" hreflang="en" href="https://leonthinking.github.io/en.html">
+    <link rel="alternate" hreflang="x-default" href="https://leonthinking.github.io/cn.html">
+    <script>
+        (() => {
+            let savedTheme = "";
+            try {
+                savedTheme = localStorage.getItem("leon-theme") || "";
+            } catch {
+                savedTheme = "";
+            }
+            const prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+            document.documentElement.dataset.theme = savedTheme || (prefersLight ? "light" : "dark");
+        })();
+    </script>
+
     <style>
-        /* 复用index.html中的所有样式 */
+        :root {
+            color-scheme: light dark;
+            --bg: #11100d;
+            --bg-soft: #171511;
+            --panel: rgba(255, 250, 239, 0.055);
+            --panel-strong: rgba(255, 250, 239, 0.095);
+            --panel-soft: rgba(255, 250, 239, 0.045);
+            --line: rgba(255, 250, 239, 0.16);
+            --line-strong: rgba(255, 250, 239, 0.3);
+            --text: #f7f1e4;
+            --muted: #bcb1a0;
+            --soft: #877c6d;
+            --accent: #f1b96a;
+            --accent-2: #80d0c7;
+            --accent-3: #e88c7d;
+            --spot: rgba(241, 185, 106, 0.18);
+            --wash: rgba(128, 208, 199, 0.08);
+            --grid-line: rgba(255, 250, 239, 0.045);
+            --grid-line-strong: rgba(255, 250, 239, 0.06);
+            --fade-bg: rgba(17, 16, 13, 0.88);
+            --chrome-bg: rgba(17, 16, 13, 0.72);
+            --menu-bg: rgba(23, 21, 17, 0.96);
+            --button-bg: rgba(255, 250, 239, 0.08);
+            --button-hover: rgba(255, 250, 239, 0.12);
+            --hero-a: rgba(241, 185, 106, 0.16);
+            --hero-b: rgba(128, 208, 199, 0.12);
+            --board-card-bg: rgba(17, 16, 13, 0.76);
+            --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+            --radius: 8px;
+            --max: 1180px;
+        }
+
+        :root[data-theme="light"] {
+            --bg: #f6efe4;
+            --bg-soft: #fffaf1;
+            --panel: rgba(38, 32, 24, 0.045);
+            --panel-strong: rgba(38, 32, 24, 0.075);
+            --panel-soft: rgba(38, 32, 24, 0.04);
+            --line: rgba(38, 32, 24, 0.14);
+            --line-strong: rgba(38, 32, 24, 0.25);
+            --text: #201a13;
+            --muted: #675d50;
+            --soft: #948776;
+            --accent: #a76213;
+            --accent-2: #247b73;
+            --accent-3: #b65b4d;
+            --spot: rgba(212, 134, 42, 0.22);
+            --wash: rgba(36, 123, 115, 0.12);
+            --grid-line: rgba(38, 32, 24, 0.055);
+            --grid-line-strong: rgba(38, 32, 24, 0.065);
+            --fade-bg: rgba(246, 239, 228, 0.9);
+            --chrome-bg: rgba(255, 250, 241, 0.76);
+            --menu-bg: rgba(255, 250, 241, 0.97);
+            --button-bg: rgba(38, 32, 24, 0.045);
+            --button-hover: rgba(38, 32, 24, 0.075);
+            --hero-a: rgba(212, 134, 42, 0.16);
+            --hero-b: rgba(36, 123, 115, 0.1);
+            --board-card-bg: rgba(255, 250, 241, 0.82);
+            --shadow: 0 24px 70px rgba(65, 49, 28, 0.18);
+        }
+
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background:
+                radial-gradient(circle at var(--spot-x, 50%) var(--spot-y, 0%), var(--spot), transparent 22rem),
+                linear-gradient(135deg, var(--wash), transparent 26rem),
+                var(--bg);
+            color: var(--text);
+            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.65;
+            letter-spacing: 0;
         }
-        .header {
-            text-align: center;
-            padding: 40px 0;
-        }
-        .header h1 {
-            font-size: clamp(1.8em, 5vw, 2.5em);
-            margin-bottom: 10px;
-        }
-        .header p {
-            color: #666;
-            font-size: clamp(0.9em, 3vw, 1.2em);
-            line-height: 1.5;
-            padding: 0 10px;
-        }
-        .content {
-            padding: 20px 0;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        .section h2 {
-            font-size: clamp(1.5em, 4vw, 1.8em);
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            margin-top: 40px;
-            scroll-margin-top: 2em;
-        }
-        .section h3 {
-            font-size: clamp(1.2em, 3.5vw, 1.5em);
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-        .section h4 {
-            font-size: clamp(1.1em, 3vw, 1.3em);
-            margin-top: 25px;
-            margin-bottom: 15px;
-        }
-        .section p, .section li {
-            margin-bottom: 15px;
-        }
-        .contact {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 20px;
-        }
-        .tag {
-            display: inline-block;
-            background: #f0f0f0;
-            padding: 2px 8px;
-            border-radius: 4px;
-            margin: 2px;
-            font-size: 0.9em;
-        }
-        a {
-            color: #2C7A7B;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        a:hover {
-            color: #1A4A4B;
-            text-decoration: underline;
-        }
-        @media (max-width: 600px) {
-            body {
-                padding: 15px;
-                padding-bottom: 80px;
-            }
-            .header {
-                padding: 20px 0;
-            }
-            .back-to-top {
-                bottom: 20px;
-                right: 15px;
-                width: 36px;
-                height: 36px;
-            }
-        }
-        @media screen and (max-width: 480px) {
-            .header {
-                padding: 20px 0;
-            }
-            .header p {
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-            }
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        @media print {
-            .contact {
-                page-break-inside: avoid;
-            }
-            a {
-                text-decoration: underline;
-            }
-            a[href^="http"]:after {
-                content: " (" attr(href) ")";
-            }
-        }
-        
-        /* Back to top button styles */
-        .back-to-top {
+
+        body::before {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #2C7A7B;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            content: "";
+            background-image:
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 44px 44px;
+            mask-image: linear-gradient(to bottom, black, transparent 78%);
+        }
+
+        body::after {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            content: "";
+            background: linear-gradient(to bottom, transparent, var(--fade-bg) 76%);
+        }
+
+        a {
+            color: inherit;
             text-decoration: none;
-            opacity: 0;
-            transition: opacity 0.3s;
-            cursor: pointer;
         }
-        
-        .back-to-top.visible {
-            opacity: 1;
+
+        button {
+            font: inherit;
         }
-        
-        /* Language switcher styles */
-        .lang-switcher {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
+
+        .page {
+            width: min(var(--max), calc(100% - 40px));
+            margin: 0 auto;
+            padding: 24px 0 56px;
         }
-        
-        .lang-dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .lang-btn {
-            display: flex;
-            align-items: center;
-            padding: 8px 12px;
-            background-color: white;
-            border: 1px solid #e1e4e8;
-            border-radius: 20px;
-            color: #2C7A7B;
-            font-size: 14px;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            width: 120px;
-            justify-content: center;
-        }
-        
-        .lang-btn .globe-icon {
-            margin-right: 5px;
-            color: #2C7A7B;
-        }
-        
-        .lang-dropdown-content {
-            display: none;
-            position: absolute;
-            right: 0;
-            top: 40px;
-            background-color: white;
-            min-width: 160px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1;
-            padding: 8px 0;
-        }
-        
-        .lang-dropdown-content a {
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px 15px;
-            text-decoration: none;
-            color: #333;
-            transition: background-color 0.2s;
+            gap: 16px;
+            min-height: 68px;
+            padding: 14px 0;
+            backdrop-filter: blur(18px);
         }
-        
-        .lang-dropdown-content a:hover {
-            background-color: #f5f8fa;
-            text-decoration: none;
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            letter-spacing: 0;
         }
-        
-        .lang-dropdown-content a.active {
-            font-weight: 500;
+
+        .brand-mark {
+            display: grid;
+            width: 34px;
+            height: 34px;
+            place-items: center;
+            border: 1px solid var(--line-strong);
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(241, 185, 106, 0.2), rgba(128, 208, 199, 0.08));
+            color: var(--accent);
+            box-shadow: var(--shadow);
         }
-        
-        .checkmark {
-            color: #2C7A7B;
-            margin-left: 10px;
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: var(--chrome-bg);
         }
-        
-        .show {
+
+        .nav a,
+        .lang-btn,
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 34px;
+            padding: 0 12px;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 13px;
+            white-space: nowrap;
+            transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .nav a:hover,
+        .nav a.is-active,
+        .lang-btn:hover,
+        .theme-toggle:hover {
+            border-color: var(--line);
+            background: var(--button-bg);
+            color: var(--text);
+        }
+
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-switcher {
+            position: relative;
+        }
+
+        .lang-btn,
+        .theme-toggle {
+            cursor: pointer;
+            background: var(--chrome-bg);
+        }
+
+        .lang-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            display: none;
+            min-width: 150px;
+            padding: 6px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--menu-bg);
+            box-shadow: var(--shadow);
+        }
+
+        .lang-menu.is-open {
             display: block;
         }
-        
-        @media (max-width: 600px) {
-            .lang-switcher {
-                top: 10px;
-                right: 10px;
+
+        .lang-menu a {
+            display: flex;
+            justify-content: space-between;
+            padding: 9px 10px;
+            border-radius: 6px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .lang-menu a:hover,
+        .lang-menu a.active {
+            background: var(--button-bg);
+            color: var(--text);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+            gap: 24px;
+            align-items: stretch;
+            min-height: calc(100vh - 130px);
+            padding: 58px 0 36px;
+        }
+
+        .hero-copy {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 0;
+            overflow-wrap: anywhere;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            width: fit-content;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 22px;
+            padding: 7px 10px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 13px;
+            background: var(--panel-soft);
+        }
+
+        .pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-2);
+            box-shadow: 0 0 0 0 rgba(128, 208, 199, 0.7);
+            animation: pulse 2.6s infinite;
+        }
+
+        @keyframes pulse {
+            70% {
+                box-shadow: 0 0 0 12px rgba(128, 208, 199, 0);
             }
-            .lang-btn {
-                padding: 6px 10px;
-                font-size: 12px;
-                width: 100px;
+            100% {
+                box-shadow: 0 0 0 0 rgba(128, 208, 199, 0);
+            }
+        }
+
+        h1 {
+            max-width: 780px;
+            margin: 0;
+            font-size: clamp(48px, 9vw, 112px);
+            line-height: 0.9;
+            letter-spacing: 0;
+        }
+
+        h1 span {
+            display: block;
+        }
+
+        .hero-copy p {
+            max-width: 660px;
+            margin: 24px 0 0;
+            color: var(--muted);
+            font-size: clamp(17px, 2vw, 22px);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 34px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0 16px;
+            border: 1px solid var(--line-strong);
+            border-radius: 8px;
+            color: var(--text);
+            background: var(--button-bg);
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .button.primary {
+            border-color: rgba(241, 185, 106, 0.5);
+            background: #f1b96a;
+            color: #21170c;
+            font-weight: 700;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            background: var(--button-hover);
+        }
+
+        .button.primary:hover {
+            background: #ffd28c;
+        }
+
+        .hero-board {
+            position: relative;
+            display: grid;
+            align-content: end;
+            min-height: 520px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background:
+                linear-gradient(160deg, var(--hero-a), transparent 42%),
+                linear-gradient(25deg, var(--hero-b), transparent 48%),
+                var(--panel-soft);
+            box-shadow: var(--shadow);
+        }
+
+        .hero-board::before {
+            position: absolute;
+            inset: 18px;
+            content: "";
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background-image:
+                linear-gradient(var(--grid-line-strong) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line-strong) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+
+        .board-card {
+            position: relative;
+            z-index: 1;
+            margin: 18px;
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--board-card-bg);
+            backdrop-filter: blur(10px);
+        }
+
+        .board-row {
+            display: grid;
+            grid-template-columns: 44px 1fr;
+            gap: 12px;
+            padding: 13px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .board-row:first-child {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+        .board-row:last-child {
+            padding-bottom: 0;
+        }
+
+        .row-index {
+            color: var(--accent);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 13px;
+        }
+
+        .row-title {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .row-note {
+            margin: 2px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .section {
+            display: grid;
+            grid-template-columns: 160px minmax(0, 1fr);
+            gap: 30px;
+            padding: 58px 0;
+            border-top: 1px solid var(--line);
+            scroll-margin-top: 92px;
+        }
+
+        .section-kicker {
+            position: sticky;
+            top: 90px;
+            align-self: start;
+            color: var(--soft);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 13px;
+        }
+
+        .section-body {
+            min-width: 0;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+
+        .section h2 {
+            margin: 0;
+            font-size: clamp(28px, 4vw, 46px);
+            line-height: 1;
+            letter-spacing: 0;
+        }
+
+        .section-intro {
+            max-width: 690px;
+            margin: 0 0 24px;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 14px;
+        }
+
+        .grid.two {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .grid.three {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .card {
+            position: relative;
+            min-width: 0;
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--panel);
+            transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--line-strong);
+            background: var(--panel-strong);
+        }
+
+        .card .meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 18px;
+            color: var(--soft);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 20px;
+            line-height: 1.25;
+        }
+
+        .card p {
+            margin: 12px 0 0;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .card-link::after {
+            position: absolute;
+            inset: 0;
+            content: "";
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            min-height: 32px;
+            padding: 0 11px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--muted);
+            background: var(--panel-soft);
+            font-size: 14px;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 10px;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 98px 1fr;
+            gap: 16px;
+            padding: 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel-soft);
+        }
+
+        .timeline-item time {
+            color: var(--accent);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 13px;
+        }
+
+        .timeline-item h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .timeline-item p {
+            margin: 7px 0 0;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .recommendations {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .list-card {
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel-soft);
+        }
+
+        .list-card h3 {
+            margin: 0 0 14px;
+            font-size: 18px;
+        }
+
+        .list-card ul {
+            display: grid;
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .list-card li {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .list-card strong {
+            color: var(--text);
+            font-weight: 650;
+        }
+
+        .contact-panel {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 22px;
+            align-items: end;
+            padding: 26px;
+            border: 1px solid var(--line-strong);
+            border-radius: 8px;
+            background:
+                linear-gradient(135deg, rgba(241, 185, 106, 0.12), transparent 52%),
+                var(--panel);
+        }
+
+        .contact-panel h2 {
+            margin: 0;
+            font-size: clamp(30px, 5vw, 54px);
+            line-height: 1;
+        }
+
+        .contact-panel p {
+            max-width: 640px;
+            margin: 14px 0 0;
+            color: var(--muted);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .copy-tip {
+            min-height: 20px;
+            margin-top: 12px;
+            color: var(--accent-2);
+            font-size: 13px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 30;
+            display: grid;
+            width: 42px;
+            height: 42px;
+            place-items: center;
+            border: 1px solid var(--line-strong);
+            border-radius: 8px;
+            background: var(--menu-bg);
+            color: var(--text);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(8px);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .back-to-top.is-visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 40;
+            width: 100%;
+            height: 2px;
+            transform-origin: left;
+            transform: scaleX(0);
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        }
+
+        @media (max-width: 900px) {
+            .topbar {
+                align-items: flex-start;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .hero,
+            .section,
+            .contact-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 38px;
+            }
+
+            .hero-board {
+                min-height: 430px;
+            }
+
+            .section-kicker {
+                position: static;
+            }
+
+            .grid.three,
+            .grid.two,
+            .recommendations {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .page {
+                width: min(calc(100% - 28px), var(--max));
+                padding-top: 14px;
+            }
+
+            .brand span:last-child {
+                display: none;
+            }
+
+            .topbar {
+                min-height: 58px;
+            }
+
+            .hero {
+                padding-top: 26px;
+            }
+
+            h1 {
+                font-size: clamp(38px, 11vw, 42px);
+            }
+
+            .hero-copy p {
+                font-size: 16px;
+            }
+
+            .hero-board {
+                min-height: 360px;
+            }
+
+            .board-card {
+                margin: 12px;
+                padding: 14px;
+            }
+
+            .section {
+                padding: 42px 0;
+            }
+
+            .section-head {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 6px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+            }
+
+            .topbar,
+            .back-to-top,
+            .progress {
+                display: none;
+            }
+
+            .page {
+                width: 100%;
+                padding: 0;
+            }
+
+            .card,
+            .timeline-item,
+            .list-card,
+            .contact-panel {
+                break-inside: avoid;
+                border-color: #ddd;
+                background: #fff;
+            }
+
+            a[href^="http"]::after {
+                content: " (" attr(href) ")";
             }
         }
     </style>
@@ -272,166 +854,336 @@
         "@type": "Person",
         "name": "Leon Zhang",
         "jobTitle": "Product Manager",
-        "description": "Internet Product Manager, focusing on AI products and innovation",
+        "description": "Product manager focused on AI products and innovation",
         "url": "https://leonthinking.github.io",
         "sameAs": [
             "https://twitter.com/leonthinking",
-            "https://jike.city/leonzhang"
+            "https://jike.city/leonzhang",
+            "https://bento.me/leonzhang"
         ],
         "knowsAbout": [
             "Product Management",
             "AI Products",
             "Smart Hardware",
-            "User Experience Design"
+            "User Experience Design",
+            "XR"
         ]
     }
     </script>
 </head>
 <body>
-    <!-- Language switcher -->
-    <div class="lang-switcher">
-        <div class="lang-dropdown">
-            <button class="lang-btn"><span class="globe-icon">🌐</span> English</button>
-            <div class="lang-dropdown-content">
-                <a href="cn.html">简体中文</a>
-                <a href="en.html" class="active">English <span class="checkmark">✓</span></a>
+    <div class="progress" aria-hidden="true"></div>
+
+    <div class="page">
+        <header class="topbar">
+            <a class="brand" href="#top" aria-label="Back to top">
+                <span class="brand-mark">L</span>
+                <span>Leon Zhang</span>
+            </a>
+
+            <nav class="nav" aria-label="Page navigation">
+                <a href="#about">About</a>
+                <a href="#work">Works</a>
+                <a href="#life">Life</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="top-actions">
+                <button class="theme-toggle" type="button" aria-label="Toggle light or dark mode">
+                    <span class="theme-icon" aria-hidden="true">☼</span>
+                    <span class="theme-label">Light</span>
+                </button>
+                <div class="lang-switcher">
+                    <button class="lang-btn" type="button" aria-expanded="false" aria-controls="lang-menu">English</button>
+                    <div class="lang-menu" id="lang-menu">
+                        <a href="cn.html">简体中文</a>
+                        <a class="active" href="en.html">English <span>✓</span></a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </header>
+
+        <main id="top">
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-copy">
+                    <div class="eyebrow"><span class="pulse"></span> AI Product Lead / Product Manager / Writer</div>
+                    <h1 id="hero-title"><span>Think Big,</span><span>Think Different.</span></h1>
+                    <p>I am Leon, focused on AI, XR, and smart hardware. I currently lead AI products at a small company in Hangzhou, while using writing, photography, and everyday observation to clarify how I understand technology and life.</p>
+                    <div class="hero-actions">
+                        <a class="button primary" href="#work">View Works</a>
+                        <a class="button" href="https://bento.me/leonzhang">Digital Home</a>
+                        <a class="button" href="#contact">Contact Me</a>
+                    </div>
+                </div>
+
+                <aside class="hero-board" aria-label="Leon profile summary">
+                    <div class="board-card">
+                        <div class="board-row">
+                            <span class="row-index">01</span>
+                            <div>
+                                <p class="row-title">AI Product Lead</p>
+                                <p class="row-note">Leading AI products from opportunity framing to shipped experience.</p>
+                            </div>
+                        </div>
+                        <div class="board-row">
+                            <span class="row-index">02</span>
+                            <div>
+                                <p class="row-title">Stay Thinking</p>
+                                <p class="row-note">A personal writing space for thoughts on technology, work, and life.</p>
+                            </div>
+                        </div>
+                        <div class="board-row">
+                            <span class="row-index">03</span>
+                            <div>
+                                <p class="row-title">Daily Notes</p>
+                                <p class="row-note">Three to four notes a day, nearly one million words over four years.</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+
+            <section class="section" id="about" aria-labelledby="about-title">
+                <div class="section-kicker">01 / PROFILE</div>
+                <div class="section-body">
+                    <div class="section-head">
+                        <h2 id="about-title">About Me</h2>
+                    </div>
+                    <p class="section-intro">A typical INTJ: detail-oriented, mentally active, and genuinely fond of meeting new people. To me, product work means reorganizing a complex world into systems that can be used, felt, and steadily improved.</p>
+                    <div class="grid three">
+                        <div class="card">
+                            <div class="meta"><span>Domain</span><span>01</span></div>
+                            <h3>AI and XR</h3>
+                            <p>Focused on AI products, AR glasses, audio augmentation, and smart hardware, with an interest in turning frontier technology into natural everyday experiences.</p>
+                        </div>
+                        <div class="card">
+                            <div class="meta"><span>Work</span><span>02</span></div>
+                            <h3>Product Lead</h3>
+                            <p>Leading AI product work in Hangzhou, covering opportunity judgment, experience design, business execution, and cross-functional collaboration.</p>
+                        </div>
+                        <div class="card">
+                            <div class="meta"><span>Habit</span><span>03</span></div>
+                            <h3>Continuous Notes</h3>
+                            <p>Using notes, public writing, and photography to preserve observations and turn scattered experience into reusable judgment.</p>
+                        </div>
+                    </div>
+                    <div class="tags" aria-label="Professional profile tags" style="margin-top: 18px;">
+                        <span class="tag">Internet Product Manager</span>
+                        <span class="tag">AI Products</span>
+                        <span class="tag">Smart Hardware</span>
+                        <span class="tag">Tool Enthusiast</span>
+                        <span class="tag">Technology Enthusiast</span>
+                        <span class="tag">Smartisan & Apple Product Fan</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="work" aria-labelledby="work-title">
+                <div class="section-kicker">02 / WORKS</div>
+                <div class="section-body">
+                    <div class="section-head">
+                        <h2 id="work-title">Personal Works</h2>
+                    </div>
+                    <p class="section-intro">A scannable index of tools and writing: product observations, AI and AR thinking, and small things I have shipped.</p>
+                    <div class="grid two">
+                        <article class="card">
+                            <div class="meta"><span>Chrome Extension</span><span>Tool</span></div>
+                            <h3><a class="card-link" href="https://chromewebstore.google.com/detail/dbfjffbkhlaeihdeibejjofoidomdfdp?utm_source=item-share-cp">flomo Quick Capture</a></h3>
+                            <p>Quickly capture ideas and send webpage links to flomo in a structured format.</p>
+                        </article>
+                        <article class="card">
+                            <div class="meta"><span>Writing</span><span>AR / AI</span></div>
+                            <h3><a class="card-link" href="https://leonzhang.feishu.cn/wiki/QrKswAhYMiPuI5khoq2c4WGEnSd">Are AI and AR the Same Thing?</a></h3>
+                            <p>From Google Glass to Rokid Glasses, rethinking the product relationship between AI and AR.</p>
+                        </article>
+                        <article class="card">
+                            <div class="meta"><span>Writing</span><span>Audio</span></div>
+                            <h3><a class="card-link" href="https://leonzhang.feishu.cn/wiki/Clt7wYBlFiwRlpkEFeqcoSJ4nXN">An Alternative Path for AR Products</a></h3>
+                            <p>Audio augmentation plus AI may be a more natural and higher-frequency path for intelligent wearables.</p>
+                        </article>
+                        <article class="card">
+                            <div class="meta"><span>Writing</span><span>Experience</span></div>
+                            <h3><a class="card-link" href="https://leonzhang.feishu.cn/wiki/GAnpwvmiBiwbupkRHSQcDWPznbd">First Experience with AR Glasses</a></h3>
+                            <p>A note from real experience on how curiosity and passion survive the long road.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="life" aria-labelledby="life-title">
+                <div class="section-kicker">03 / LIFE</div>
+                <div class="section-body">
+                    <div class="section-head">
+                        <h2 id="life-title">Life Snapshots</h2>
+                    </div>
+                    <div class="timeline" aria-label="Personal hobbies">
+                        <div class="timeline-item">
+                            <time>Photo</time>
+                            <div>
+                                <h3>Photography</h3>
+                                <p>I enjoy using a camera to preserve good light, small moments, and scenes that rarely repeat.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <time>Sport</time>
+                            <div>
+                                <h3>Sports</h3>
+                                <p>Road cycling, college basketball team member, and badminton enthusiast. Once the body starts moving, many problems become simpler.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <time>Explore</time>
+                            <div>
+                                <h3>Exploration</h3>
+                                <p>Hiking, trekking, and trying new food. When I find something delicious, I may revisit it for a full week.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <time>Write</time>
+                            <div>
+                                <h3>Writing</h3>
+                                <p>Three to four notes a day, twenty to thirty thousand words a month, using long-term writing to resist the natural decay of memory.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommendations" style="margin-top: 14px;">
+                        <div class="list-card">
+                            <h3>Podcast Picks</h3>
+                            <ul>
+                                <li><strong>San Wu Huan</strong>: Independent business observation focused on the intersection of technology and commerce.</li>
+                                <li><strong>Ban Latte</strong>: Business history told in a lively, conversational style.</li>
+                                <li><strong>Organization Evolution</strong>: Workplace and organizational observations for the digital era.</li>
+                                <li><strong>Business Is Like This</strong>: A dense 15-minute business literacy show.</li>
+                                <li><strong>Story FM</strong>: A human stories album in audio form.</li>
+                            </ul>
+                        </div>
+                        <div class="list-card">
+                            <h3>Book Picks</h3>
+                            <ul>
+                                <li><strong>Elon Musk</strong>: A complex case of first-principles thinking and entrepreneurship.</li>
+                                <li><strong>The World After 5000 Days</strong>: Kevin Kelly's observations on AI, the metaverse, and future civilization.</li>
+                                <li><strong>The Psychology of Money</strong>: The psychology and behavior patterns behind wealth decisions.</li>
+                                <li><strong>The Burnout Society</strong>: A systematic diagnosis of achievement society and self-exploitation.</li>
+                                <li><strong>How to Take Smart Notes</strong>: A guide to building a second brain in the digital age.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="contact" aria-labelledby="contact-title">
+                <div class="section-kicker">04 / CONTACT</div>
+                <div class="section-body">
+                    <div class="contact-panel">
+                        <div>
+                            <h2 id="contact-title">Coffee, sports, or a product conversation.</h2>
+                            <p>Happy to exchange thoughts on life, AI, XR, smart hardware, product design, and knowledge management.</p>
+                            <div class="copy-tip" role="status" aria-live="polite"></div>
+                        </div>
+                        <div class="contact-links">
+                            <a class="button" href="https://jike.city/leonzhang">Jike</a>
+                            <a class="button" href="https://twitter.com/leonthinking">Twitter</a>
+                            <button class="button" type="button" data-copy="thinkinghunt">Copy WeChat</button>
+                            <button class="button" type="button" data-copy="thinkinghunt@163.com">Copy Email</button>
+                            <a class="button primary" href="https://bento.me/leonzhang">Bento</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <header class="header">
-        <h1>Leon Zhang</h1>
-        <p>Product Manager | Blogger | Photography Lover</p>
-    </header>
+    <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
 
-    <main class="content">
-        <article class="section">
-            <h2>😃 About Me</h2>
-            <p>👋 Hi! I'm Leon, an internet product manager focusing on AI, XR, and smart hardware. Currently working as an AI Product Lead at a small company in Hangzhou, mainly responsible for the company's AI products.</p>
-            <p>Personality-wise, I'm a typical INTJ: friends say I'm detail-oriented and have an active mind. I also enjoy the process of making friends.</p>
-            <p>My WeChat public account "<strong>Stay Thinking</strong>" is my personal space where I record my thoughts and passion for AI, technology, work, and life. Welcome to check it out when you're not busy, and let's "<strong>Think Big, Think Different</strong>" together.</p>
-        </article>
-
-        <article class="section">
-            <h2>🏷️ Professional Profile</h2>
-            <p><strong>Industry Fields:</strong></p>
-            <div class="tags">
-                <span class="tag">Internet Product Manager</span>
-                <span class="tag">AI Products</span>
-                <span class="tag">Smart Hardware</span>
-            </div>
-            <br>
-            <p><strong>Interests:</strong> Tool enthusiast | Tech lover | Smartisan & Apple product fan</p>
-        </article>
-
-        <article class="section">
-            <h2>💻 Personal Works</h2>
-            <ul>
-                <li>1. Chrome Extension Development: <a href="https://chromewebstore.google.com/detail/dbfjffbkhlaeihdeibejjofoidomdfdp?utm_source=item-share-cp">flomo Quick Capture</a> - Quickly capture ideas and send webpage addresses to flomo in a structured format</li>
-                <li>2. Recommended Reading</li>
-                    <ul>
-                        <li>2.1 <a href="https://leonzhang.feishu.cn/wiki/QrKswAhYMiPuI5khoq2c4WGEnSd">Are AI and AR the Same Thing? From Google Glass to Rokid Glasses</a></li>
-                        <li>2.2 <a href="https://leonzhang.feishu.cn/wiki/Clt7wYBlFiwRlpkEFeqcoSJ4nXN">An Alternative Path for AR Products: Audio Enhancement + AI</a></li>
-                        <li>2.3 <a href="https://leonzhang.feishu.cn/wiki/GAnpwvmiBiwbupkRHSQcDWPznbd">First Experience with AR Glasses | Passion Can Overcome the Long Journey</a></li>
-                    </ul>
-            </ul>
-        </article>
-
-        <article class="section">
-            <h2>☁️ Life Snapshots</h2>
-            <h3>Personal Hobbies</h3>
-            <ul>
-                <li>• 📸 Photography: Enjoy capturing beautiful moments of life through the lens</li>
-                <li>• 🚴‍♂️ Sports: Road cycling, college basketball team member, badminton enthusiast</li>
-                <li>• 🍜 Food: Like to try new things, and when I find something delicious, I might even visit for a whole week straight</li>
-                <li>• 🌄 Exploration: Hiking, trekking, pursuing the scenery from mountain tops, and curious about what's on the other side</li>
-                <li>• ✍️ Writing: 3-4 notes daily, averaging 20-30 thousand words monthly, accumulated nearly 1 million words over 4 years</li>
-            </ul>
-
-        </article>
-    </main>
-
-    <footer class="contact">
-        <h2>🤝 Contact Me</h2>
-        <ul>
-            <li>• Social Platforms: <a href="https://jike.city/leonzhang">Jike</a> | <a href="https://twitter.com/leonthinking">Twitter</a></li>
-            <li>• WeChat: thinkinghunt</li>
-            <li>• Email: thinkinghunt@163.com</li>
-            <li>• Digital Homepage: <a href="https://bento.me/leonzhang">https://bento.me/leonzhang</a></li>
-        </ul>
-        <br>
-        <p>Welcome to join me for coffee, sports, chat, or simply sharing the joys of life~ 🌟</p>
-        <br>
-        <p style="text-align: right; color: #666; font-size: 0.9em;">Powered by AI Coding</p>
-    </footer>
-
-    <!-- Back to top button -->
-    <a class="back-to-top" aria-label="Back to top" role="button" style="display: none;">↑</a>
-    
     <script>
-        // Back to top button logic
-        const backToTop = document.querySelector('.back-to-top');
-        let isVisible = false;
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                if (!isVisible) {
-                    backToTop.style.display = 'flex';
-                    setTimeout(() => backToTop.classList.add('visible'), 10);
-                    isVisible = true;
+        const root = document.documentElement;
+        const progress = document.querySelector(".progress");
+        const backToTop = document.querySelector(".back-to-top");
+        const navLinks = [...document.querySelectorAll(".nav a")];
+        const sections = navLinks.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+        const langButton = document.querySelector(".lang-btn");
+        const langMenu = document.querySelector(".lang-menu");
+        const themeButton = document.querySelector(".theme-toggle");
+        const themeIcon = document.querySelector(".theme-icon");
+        const themeLabel = document.querySelector(".theme-label");
+        const copyTip = document.querySelector(".copy-tip");
+
+        function saveTheme(theme) {
+            try {
+                localStorage.setItem("leon-theme", theme);
+            } catch {
+                // Some file:// or privacy-mode contexts block storage; the toggle should still work.
+            }
+        }
+
+        function applyTheme(theme, shouldSave = true) {
+            root.dataset.theme = theme;
+            if (shouldSave) {
+                saveTheme(theme);
+            }
+            const nextTheme = theme === "light" ? "dark" : "light";
+            themeIcon.textContent = nextTheme === "light" ? "☼" : "☾";
+            themeLabel.textContent = nextTheme === "light" ? "Light" : "Dark";
+            themeButton.setAttribute("aria-label", nextTheme === "light" ? "Switch to light mode" : "Switch to dark mode");
+        }
+
+        applyTheme(root.dataset.theme || "dark", false);
+
+        window.addEventListener("pointermove", (event) => {
+            root.style.setProperty("--spot-x", `${event.clientX}px`);
+            root.style.setProperty("--spot-y", `${event.clientY}px`);
+        });
+
+        function updateScrollState() {
+            const scrollTop = window.scrollY;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.transform = `scaleX(${maxScroll > 0 ? scrollTop / maxScroll : 0})`;
+            backToTop.classList.toggle("is-visible", scrollTop > 420);
+
+            let current = sections[0]?.id;
+            sections.forEach((section) => {
+                if (section.getBoundingClientRect().top <= 130) {
+                    current = section.id;
                 }
-            } else {
-                if (isVisible) {
-                    backToTop.classList.remove('visible');
-                    setTimeout(() => backToTop.style.display = 'none', 300);
-                    isVisible = false;
-                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.toggle("is-active", link.getAttribute("href") === `#${current}`);
+            });
+        }
+
+        window.addEventListener("scroll", updateScrollState, { passive: true });
+        window.addEventListener("resize", updateScrollState);
+        updateScrollState();
+
+        langButton.addEventListener("click", () => {
+            const isOpen = langMenu.classList.toggle("is-open");
+            langButton.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!event.target.closest(".lang-switcher")) {
+                langMenu.classList.remove("is-open");
+                langButton.setAttribute("aria-expanded", "false");
             }
         });
-        
-        // Back to top click event
-        backToTop.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+
+        themeButton.addEventListener("click", () => {
+            applyTheme(root.dataset.theme === "light" ? "dark" : "light");
         });
 
-        // Add smooth scrolling to all internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return; // Ignore empty anchor links
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // 语言切换下拉菜单逻辑
-        document.addEventListener('DOMContentLoaded', function() {
-            const langBtn = document.querySelector('.lang-btn');
-            const langDropdown = document.querySelector('.lang-dropdown-content');
-            
-            langBtn.addEventListener('click', function() {
-                langDropdown.classList.toggle('show');
-            });
-            
-            // 点击外部区域关闭下拉菜单
-            window.addEventListener('click', function(e) {
-                if (!e.target.matches('.lang-btn') && !e.target.matches('.globe-icon')) {
-                    if (langDropdown.classList.contains('show')) {
-                        langDropdown.classList.remove('show');
-                    }
+        document.querySelectorAll("[data-copy]").forEach((button) => {
+            button.addEventListener("click", async () => {
+                const value = button.dataset.copy;
+                try {
+                    await navigator.clipboard.writeText(value);
+                    copyTip.textContent = `Copied: ${value}`;
+                } catch {
+                    copyTip.textContent = value;
                 }
             });
         });
     </script>
 </body>
-</html> 
+</html>
