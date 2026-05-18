@@ -496,6 +496,18 @@
             font-size: 17px;
         }
 
+        .section-more {
+            flex-shrink: 0;
+            color: var(--accent);
+            font-size: 15px;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .section-more:hover {
+            color: var(--text);
+            transform: translateX(2px);
+        }
+
         .grid {
             display: grid;
             gap: 14px;
@@ -911,7 +923,7 @@
                     <p>我是 Leon，关注 AI、XR 与智能硬件。现在杭州一家小公司负责 AI 产品，也持续用写作、摄影和日常观察整理自己对科技与生活的理解。</p>
                     <div class="hero-actions">
                         <a class="button primary" href="#work">查看作品</a>
-                        <a class="button" href="https://bento.me/leonzhang">数字主页</a>
+                        <a class="button" href="https://leonzhang.feishu.cn/wiki/OtHNwmgRbiYgoOksd0gcpgaCnNc">个人说明书</a>
                         <a class="button" href="#contact">联系我</a>
                     </div>
                 </div>
@@ -983,6 +995,7 @@
                 <div class="section-body">
                     <div class="section-head">
                         <h2 id="work-title">个人作品</h2>
+                        <a class="section-more" href="https://leonzhang.feishu.cn/wiki/Wfg8wfRfGikUuHkVqkgco8L6nPe" target="_blank" rel="noopener noreferrer">更多作品 →</a>
                     </div>
                     <p class="section-intro">把作品和文章放成一张可扫描的索引：有工具、有产品观察，也有我对 AI 与 AR 关系的阶段性判断。</p>
                     <div class="grid two">
@@ -1077,7 +1090,7 @@
                 <div class="section-body">
                     <div class="contact-panel">
                         <div>
-                            <h2 id="contact-title">一起约咖啡、运动，或者聊聊产品。</h2>
+                            <h2 id="contact-title">一起约咖啡、运动，或者聊聊产品</h2>
                             <p>欢迎分享生活里的喜悦，也欢迎交流 AI、XR、智能硬件、产品设计和知识管理。</p>
                             <div class="copy-tip" role="status" aria-live="polite"></div>
                         </div>
@@ -1086,7 +1099,7 @@
                             <a class="button" href="https://twitter.com/leonthinking">Twitter</a>
                             <button class="button" type="button" data-copy="thinkinghunt">复制微信</button>
                             <button class="button" type="button" data-copy="thinkinghunt@163.com">复制邮箱</button>
-                            <a class="button primary" href="https://bento.me/leonzhang">Bento</a>
+                            <!-- <a class="button primary" href="https://bento.me/leonzhang">Bento</a> -->
                         </div>
                     </div>
                 </div>

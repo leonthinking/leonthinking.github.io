@@ -496,6 +496,18 @@
             font-size: 17px;
         }
 
+        .section-more {
+            flex-shrink: 0;
+            color: var(--accent);
+            font-size: 15px;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .section-more:hover {
+            color: var(--text);
+            transform: translateX(2px);
+        }
+
         .grid {
             display: grid;
             gap: 14px;
@@ -911,7 +923,7 @@
                     <p>I am Leon, focused on AI, XR, and smart hardware. I currently lead AI products at a small company in Hangzhou, while using writing, photography, and everyday observation to clarify how I understand technology and life.</p>
                     <div class="hero-actions">
                         <a class="button primary" href="#work">View Works</a>
-                        <a class="button" href="https://bento.me/leonzhang">Digital Home</a>
+                        <a class="button" href="https://leonzhang.feishu.cn/wiki/OtHNwmgRbiYgoOksd0gcpgaCnNc">Personal Manual</a>
                         <a class="button" href="#contact">Contact Me</a>
                     </div>
                 </div>
@@ -983,6 +995,7 @@
                 <div class="section-body">
                     <div class="section-head">
                         <h2 id="work-title">Personal Works</h2>
+                        <a class="section-more" href="https://leonzhang.feishu.cn/wiki/Wfg8wfRfGikUuHkVqkgco8L6nPe" target="_blank" rel="noopener noreferrer">View all works →</a>
                     </div>
                     <p class="section-intro">A scannable index of tools and writing: product observations, AI and AR thinking, and small things I have shipped.</p>
                     <div class="grid two">
@@ -1086,7 +1099,7 @@
                             <a class="button" href="https://twitter.com/leonthinking">Twitter</a>
                             <button class="button" type="button" data-copy="thinkinghunt">Copy WeChat</button>
                             <button class="button" type="button" data-copy="thinkinghunt@163.com">Copy Email</button>
-                            <a class="button primary" href="https://bento.me/leonzhang">Bento</a>
+                            <!-- <a class="button primary" href="https://bento.me/leonzhang">Bento</a> -->
                         </div>
                     </div>
                 </div>
